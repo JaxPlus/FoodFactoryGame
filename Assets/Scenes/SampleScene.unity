@@ -288,11 +288,6 @@ MonoBehaviour:
   inventoryPanel: {fileID: 1572825159}
   slotPrefab: {fileID: 3980994610698373378, guid: 0eda62b7ff1fda94c97dc0942ea4aa5d, type: 3}
   slotCount: 105
-  itemPrefabs:
-  - {fileID: 5577630199201898491, guid: 7708960dc314f95488c16b4f4b037de7, type: 3}
-  - {fileID: 5577630199201898491, guid: 7708960dc314f95488c16b4f4b037de7, type: 3}
-  - {fileID: 695457062442531890, guid: 5c6f827e7002ee84ba1883a4611cf862, type: 3}
-  - {fileID: 695457062442531890, guid: 5c6f827e7002ee84ba1883a4611cf862, type: 3}
 --- !u!114 &361801875
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -317,7 +312,8 @@ Transform:
   m_LocalPosition: {x: 959.4798, y: 526.2714, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 1463254681}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &519420028
@@ -829,6 +825,7 @@ GameObject:
   - component: {fileID: 777414442}
   - component: {fileID: 777414441}
   - component: {fileID: 777414443}
+  - component: {fileID: 777414446}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -951,8 +948,8 @@ MonoBehaviour:
     m_ActionName: UI/TrackedDeviceOrientation
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 777414443}
-        m_TargetAssemblyTypeName: Player, Assembly-CSharp
+      - m_Target: {fileID: 777414446}
+        m_TargetAssemblyTypeName: PlayerMining, Assembly-CSharp
         m_MethodName: Mine
         m_Mode: 0
         m_Arguments:
@@ -1010,10 +1007,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: '::'
   speed: 5
-  oreTilemap: {fileID: 1511180522}
-  mineRange: 2
-  mineInterval: 1
-  playerCamera: {fileID: 519420031}
 --- !u!212 &777414444
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1087,6 +1080,22 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &777414446
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 777414440}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3cc50d60c41ae7543bc721f8feb89a19, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: '::'
+  oreTilemap: {fileID: 1511180522}
+  mineRange: 2
+  mineInterval: 1
+  playerCamera: {fileID: 519420031}
 --- !u!1 &797628520
 GameObject:
   m_ObjectHideFlags: 0
@@ -1164,8 +1173,8 @@ TilemapRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_GlobalIlluminationMeshLod: 0
-  m_SortingLayerID: 1502419111
-  m_SortingLayer: 0
+  m_SortingLayerID: 337401089
+  m_SortingLayer: 1
   m_SortingOrder: 0
   m_ChunkSize: {x: 32, y: 32, z: 32}
   m_ChunkCullingBounds: {x: 0, y: 0, z: 0}
@@ -4100,6 +4109,56 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1278824942}
   m_CullTransparentMesh: 1
+--- !u!1 &1463254680
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1463254681}
+  - component: {fileID: 1463254682}
+  m_Layer: 0
+  m_Name: ItemDictionary
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1463254681
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1463254680}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 361801876}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1463254682
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1463254680}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 70611b3ad5f09704da944eefa5321604, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: '::'
+  itemPrefabs:
+  - {fileID: 6881304343224174127, guid: 7708960dc314f95488c16b4f4b037de7, type: 3}
+  - {fileID: 1999094972929615334, guid: 5c6f827e7002ee84ba1883a4611cf862, type: 3}
+  - {fileID: 9166767518236612077, guid: bc97651d83af27548b88c791f235075f, type: 3}
+  - {fileID: 1903324316021170283, guid: cdf75331f3e5fe245ba5ba3f9c934069, type: 3}
+  - {fileID: 2942864800379483650, guid: 7ba89262243f1654a8ea0af458444f7b, type: 3}
 --- !u!1 &1511180519
 GameObject:
   m_ObjectHideFlags: 0
@@ -4178,8 +4237,8 @@ TilemapRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_GlobalIlluminationMeshLod: 0
-  m_SortingLayerID: 1502419111
-  m_SortingLayer: 0
+  m_SortingLayerID: 337401089
+  m_SortingLayer: 1
   m_SortingOrder: 0
   m_ChunkSize: {x: 32, y: 32, z: 32}
   m_ChunkCullingBounds: {x: 0, y: 0, z: 0}
