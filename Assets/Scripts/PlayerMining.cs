@@ -15,7 +15,7 @@ public class PlayerMining : MonoBehaviour
 
     private void Start()
     {
-        inventoryController = FindFirstObjectByType<InventoryController>();
+        inventoryController = FindFirstObjectByType<InventoryController>(); ;
     }
 
     private void FixedUpdate()
@@ -28,7 +28,7 @@ public class PlayerMining : MonoBehaviour
             if (dist > mineRange)
             {
                 StopMining();
-                Debug.Log("Odszed�e� od rudy � przerywam kopanie.");
+                Debug.Log("To far away from ore.");
             }
         }
     }
@@ -47,7 +47,7 @@ public class PlayerMining : MonoBehaviour
             if (currentOreCell.HasValue && currentOreCell.Value == cellPos)
             {
                 StopMining();
-                Debug.Log("Przesta�em kopa� rud�.");
+                Debug.Log("Stop mining ore.");
                 return;
             }
 
@@ -57,7 +57,7 @@ public class PlayerMining : MonoBehaviour
             }
 
             currentOreCell = cellPos;
-            Debug.Log("Zaczynam kopa� rud�: " + tile.name);
+            Debug.Log("Mining ore: " + tile.name);
             if (!isMining)
             {
                 miningCoroutine = StartCoroutine(MineLoop(cellPos, tile));
@@ -69,12 +69,12 @@ public class PlayerMining : MonoBehaviour
     {
         while (true)
         {
-            Debug.Log("Wydobyto rud�: " + tile.name);
+            Debug.Log("Got ore: " + tile.name);
             isMining = true;
             GameObject item = inventoryController.FindOreByName(tile.name);
             if (item != null)
             {
-                bool itemAdded = inventoryController.AddItem(item);
+                inventoryController.AddItem(item);
             }
 
             isMining = false;

@@ -9,8 +9,22 @@ public class InventoryController : MonoBehaviour
 
     public GameObject inventoryPanel;
     public GameObject slotPrefab;
-    public int slotCount;
+    public int slotCount = 105;
     //public GameObject[] itemPrefabs;
+
+    public static InventoryController Instance { get; private set; }
+
+    private void Awake()
+    {
+        if (Instance != null && Instance != this)
+        {
+            Destroy(gameObject);
+            return;
+        }
+
+        Instance = this;
+    }
+
     void Start()
     {
         itemDictionary = FindFirstObjectByType<ItemDictionary>();
@@ -43,7 +57,25 @@ public class InventoryController : MonoBehaviour
 
     public bool AddItem(GameObject itemPrefab)
     {
-        // ZROBIÆ SPRAWDZANIE CZY JEST JU¯ TAKI ITEM I JAK JEST TO DODAÆ DO STACKA
+        Item itemToAdd = itemPrefab.GetComponent<Item>();
+        if (itemToAdd == null) return false;
+
+        foreach (Transform slotTransform in inventoryPanel.transform)
+        {
+            Slot slot = slotTransform.GetComponent<Slot>();
+
+            if (slot != null && slot.currentItem != null)
+            {
+                Item slotItem = slot.currentItem.GetComponent<Item>();
+
+                if (slotItem != null && slotItem.ID == itemToAdd.ID)
+                {
+                    slotItem.AddToStack();
+                    return true;
+                }
+            }
+        }
+
         foreach (Transform slotTransform in inventoryPanel.transform)
         {
             Slot slot = slotTransform.GetComponent<Slot>();
@@ -76,6 +108,7 @@ public class InventoryController : MonoBehaviour
                 {
                     itemID = item.ID,
                     slotIndex = slotTransform.GetSiblingIndex(),
+                    quantity = item.quantity,
                 });
             }
         }
@@ -106,9 +139,17 @@ public class InventoryController : MonoBehaviour
                 {
                     GameObject item = Instantiate(itemPrefab, slot.transform);
                     item.GetComponent<RectTransform>().anchoredPosition = Vector2.zero;
+
+                    Item itemComponent = item.GetComponent<Item>();
+
+                    if (itemComponent != null && data.quantity > 1)
+                    {
+                        itemComponent.quantity = data.quantity;
+                        itemComponent.UpdateQuantityDisplay();
+                    }
+
                     slot.currentItem = item;
                 }
-
             }
         }
     }

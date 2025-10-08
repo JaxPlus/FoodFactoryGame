@@ -5,10 +5,12 @@ public class SaveController : MonoBehaviour
 {
     private string saveLocation;
     private InventoryController inventoryController;
+
     void Start()
     {
         saveLocation = Path.Combine(Application.persistentDataPath, "saveData.json");
         inventoryController = FindFirstObjectByType<InventoryController>();
+
         LoadGame();
     }
 
