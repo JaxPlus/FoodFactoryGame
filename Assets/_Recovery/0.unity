@@ -5502,8 +5502,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 26
-  m_fontSizeBase: 26
+  m_fontSize: 20
+  m_fontSizeBase: 20
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -6349,7 +6349,6 @@ GameObject:
   - component: {fileID: 2134770352}
   - component: {fileID: 2134770351}
   - component: {fileID: 2134770355}
-  - component: {fileID: 2134770356}
   m_Layer: 5
   m_Name: UI
   m_TagString: Untagged
@@ -6455,21 +6454,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: '::'
   menuCanvas: {fileID: 972675628}
---- !u!114 &2134770356
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2134770350}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0c405f6d773b1084f86bf901331a92f1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::HoverTipManager
-  itemName: {fileID: 1691015546}
-  ingredients: {fileID: 1709455491}
-  tipWindow: {fileID: 1761549524}
 --- !u!1001 &2040986796233770540
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6577,13 +6561,35 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 5824556945289600099, guid: c3bc3649f63055b40a2fffc7c530242f, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 6447049195420707961}
   m_SourcePrefab: {fileID: 100100000, guid: c3bc3649f63055b40a2fffc7c530242f, type: 3}
+--- !u!1 &4196726491248032002 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5824556945289600099, guid: c3bc3649f63055b40a2fffc7c530242f, type: 3}
+  m_PrefabInstance: {fileID: 2040986796233770540}
+  m_PrefabAsset: {fileID: 0}
 --- !u!224 &6447049195420707959 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 1623313385203595702, guid: c3bc3649f63055b40a2fffc7c530242f, type: 3}
   m_PrefabInstance: {fileID: 2040986796233770540}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &6447049195420707961
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4196726491248032002}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f7851694f66080547bd4754455cfce98, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::HoverTip
+  itemName: 
+  ingredients: []
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

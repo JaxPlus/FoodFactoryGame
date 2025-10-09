@@ -1,5 +1,6 @@
 using NUnit.Framework;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -28,7 +29,7 @@ public class InventoryController : MonoBehaviour
     void Start()
     {
         itemDictionary = FindFirstObjectByType<ItemDictionary>();
-
+        
         //for (int i = 0; i < slotCount; i++)
         //{
         //    Slot slot = Instantiate(slotPrefab, inventoryPanel.transform).GetComponent<Slot>();
@@ -90,6 +91,30 @@ public class InventoryController : MonoBehaviour
         }
 
         Debug.Log("Inventory is full");
+        return false;
+    }
+    
+    public bool RemoveItem(GameObject itemPrefab)
+    {
+        Item itemToRemove = itemPrefab.GetComponent<Item>();
+        if (itemToRemove == null) return false;
+
+        foreach (Transform slotTransform in inventoryPanel.transform)
+        {
+            Slot slot = slotTransform.GetComponent<Slot>();
+
+            if (slot != null && slot.currentItem != null)
+            {
+                Item slotItem = slot.currentItem.GetComponent<Item>();
+
+                if (slotItem != null && slotItem.ID == itemToRemove.ID)
+                {
+                    slotItem.RemoveItem();
+                    return true;
+                }
+            }
+        }
+
         return false;
     }
 

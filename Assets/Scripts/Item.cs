@@ -29,6 +29,19 @@ public class Item : MonoBehaviour
         return removed;
     }
 
+    public void RemoveItem(int amount = 1)
+    {
+        if (quantity - amount <= 0)
+        {
+            Destroy(gameObject);
+        }
+        else
+        {
+            quantity -= Mathf.Min(amount, quantity);
+            UpdateQuantityDisplay();
+        }
+    }
+
     public GameObject CloneItem(int newQuantity)
     {
         GameObject clone = Instantiate(gameObject);

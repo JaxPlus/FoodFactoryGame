@@ -1,3 +1,4 @@
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.Tilemaps;
@@ -8,7 +9,6 @@ public class PlayerMining : MonoBehaviour
     [SerializeField] private float mineRange = 2f;
     [SerializeField] private float mineInterval = 1f;
     [SerializeField] private Camera playerCamera;
-    private bool isMining = false;
     private Coroutine miningCoroutine;
     private Vector3Int? currentOreCell;
     private InventoryController inventoryController;
@@ -24,7 +24,7 @@ public class PlayerMining : MonoBehaviour
         {
             Vector3 worldPos = oreTilemap.GetCellCenterWorld(currentOreCell.Value);
             float dist = Vector2.Distance(transform.position, worldPos);
-
+            
             if (dist > mineRange)
             {
                 StopMining();
@@ -41,7 +41,7 @@ public class PlayerMining : MonoBehaviour
 
         Vector3Int cellPos = oreTilemap.WorldToCell(mouseWorldPos);
         TileBase tile = oreTilemap.GetTile(cellPos);
-
+        
         if (tile != null)
         {
             if (currentOreCell.HasValue && currentOreCell.Value == cellPos)
@@ -57,11 +57,19 @@ public class PlayerMining : MonoBehaviour
             }
 
             currentOreCell = cellPos;
-            Debug.Log("Mining ore: " + tile.name);
-            if (!isMining)
+            
+            Vector3 worldPos = oreTilemap.GetCellCenterWorld(currentOreCell.Value);
+            float dist = Vector2.Distance(transform.position, worldPos);
+            
+            if (dist > mineRange)
             {
-                miningCoroutine = StartCoroutine(MineLoop(cellPos, tile));
+                StopMining();
+                Debug.Log("To far away from ore.");
+                return;
             }
+            
+            Debug.Log("Mining ore: " + tile.name);
+            miningCoroutine = StartCoroutine(MineLoop(cellPos, tile));
         }
     }
 
@@ -70,14 +78,12 @@ public class PlayerMining : MonoBehaviour
         while (true)
         {
             Debug.Log("Got ore: " + tile.name);
-            isMining = true;
             GameObject item = inventoryController.FindOreByName(tile.name);
             if (item != null)
             {
                 inventoryController.AddItem(item);
             }
 
-            isMining = false;
             yield return new WaitForSeconds(mineInterval);
         }
     }

@@ -13,7 +13,8 @@ public class TabController : MonoBehaviour
 
     public void ActivateTab(int tabNum)
     {
-        for (int i = 0; i < pages.Length; i++)
+        // -1 bo jest craftingPanel ale nie ma do niego taba
+        for (int i = 0; i < pages.Length - 1; i++)
         {
             pages[i].SetActive(false);
             tabImages[i].color = Color.gray;
@@ -21,5 +22,6 @@ public class TabController : MonoBehaviour
 
         pages[tabNum].SetActive(true);
         tabImages[tabNum].color = Color.green;
+        pages[2].SetActive(pages[0].activeSelf);
     }
 }
