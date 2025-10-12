@@ -6,8 +6,8 @@ using UnityEngine.EventSystems;
 
 public class HoverTip : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 {
-    [SerializeField] private string itemName;
-    [SerializeField] private List<GameObject> ingredients;
+    private string itemName;
+    private List<GameObject> ingredients;
     private float timeToWait = 0.5f;
 
     private void Start()

@@ -266,6 +266,7 @@ GameObject:
   - component: {fileID: 361801876}
   - component: {fileID: 361801875}
   - component: {fileID: 361801874}
+  - component: {fileID: 361801877}
   m_Layer: 0
   m_Name: GameController
   m_TagString: Untagged
@@ -317,6 +318,19 @@ Transform:
   - {fileID: 1571853376}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &361801877
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 361801873}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 069b69c8ad8d71143bfcbf4afd457a05, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: '::'
+  recipeQueue: []
 --- !u!1 &458381370
 GameObject:
   m_ObjectHideFlags: 0
@@ -6455,6 +6469,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: '::'
   menuCanvas: {fileID: 972675628}
+  recipeTip: {fileID: 1761549523}
 --- !u!114 &2134770356
 MonoBehaviour:
   m_ObjectHideFlags: 0

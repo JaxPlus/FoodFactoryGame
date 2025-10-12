@@ -61,6 +61,7 @@ public class InventoryController : MonoBehaviour
         Item itemToAdd = itemPrefab.GetComponent<Item>();
         if (itemToAdd == null) return false;
 
+        // Dodawanie do stacka
         foreach (Transform slotTransform in inventoryPanel.transform)
         {
             Slot slot = slotTransform.GetComponent<Slot>();
@@ -71,12 +72,13 @@ public class InventoryController : MonoBehaviour
 
                 if (slotItem != null && slotItem.ID == itemToAdd.ID)
                 {
-                    slotItem.AddToStack();
+                    slotItem.AddToStack(itemToAdd.quantity);
                     return true;
                 }
             }
         }
 
+        // Dodawanie gdzie jest miejsce
         foreach (Transform slotTransform in inventoryPanel.transform)
         {
             Slot slot = slotTransform.GetComponent<Slot>();

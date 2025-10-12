@@ -3,6 +3,7 @@ using UnityEngine;
 public class MenuControll : MonoBehaviour
 {
     public GameObject menuCanvas;
+    public GameObject recipeTip;
 
     void Start()
     {
@@ -14,6 +15,11 @@ public class MenuControll : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Tab))
         {
             menuCanvas.SetActive(!menuCanvas.activeSelf);
+
+            if (!menuCanvas.activeSelf)
+            {
+                HoverTipManager.OnMouseLoseFocus();
+            }
         }
     }
 }

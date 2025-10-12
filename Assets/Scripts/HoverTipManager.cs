@@ -40,7 +40,7 @@ public class HoverTipManager : MonoBehaviour
         }
         
         tipWindow.sizeDelta = new Vector2(
-            itemName.preferredWidth + 70 > 200 ? 200 : itemName.preferredWidth, 
+            itemName.preferredWidth + 120 > 300 ? 300 : itemName.preferredWidth + 120, 
             itemName.preferredHeight + 70
             );
         ingredients.GetComponent<RectTransform>().sizeDelta = tipWindow.sizeDelta;
