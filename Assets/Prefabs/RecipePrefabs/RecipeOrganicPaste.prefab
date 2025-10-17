@@ -244,6 +244,7 @@ MonoBehaviour:
   - {fileID: 131330856908466754, guid: 11efb696abfb5374eb15b18569b7ada9, type: 3}
   result: {fileID: 7214106429408896450, guid: 63f5db63ba80bcc4a99f9ee3a5964910, type: 3}
   resultQuantity: 3
+  craftingTime: 0.5
 --- !u!114 &8462235003938522677
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -256,5 +257,3 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f7851694f66080547bd4754455cfce98, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  itemName: 
-  ingredients: []
