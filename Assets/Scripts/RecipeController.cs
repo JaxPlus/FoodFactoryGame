@@ -7,7 +7,7 @@ public class RecipeController : MonoBehaviour
 {
     [SerializeField] public List<GameObject> recipeQueue;
     [SerializeField] public GameObject recipeWindow;
-    private Recipe currentRecipe;
+    // private Recipe currentRecipe;
     
     public static RecipeController Instance { get; private set; }
     
@@ -24,7 +24,7 @@ public class RecipeController : MonoBehaviour
 
     private void Start()
     {
-        currentRecipe = null;
+        // currentRecipe = null;
     }
 
     public void AddRecipeToQueue(GameObject recipe)

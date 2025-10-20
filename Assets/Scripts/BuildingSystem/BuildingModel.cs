@@ -6,7 +6,7 @@ using UnityEngine;
 public class BuildingModel : MonoBehaviour
 {
     [SerializeField] private Transform wrapper;
-    [SerializeField] public bool rotatable = false;
+    [SerializeField] public bool isRotatable = false;
     public float Rotation => wrapper.transform.eulerAngles.y;
     private BuildingShapeUnit[] shapeUnits;
 
@@ -17,7 +17,9 @@ public class BuildingModel : MonoBehaviour
 
     public void Rotate(float rotationStep)
     {
-        wrapper.Rotate(new(0, rotationStep));
+        if (!isRotatable) return;
+        
+        wrapper.Rotate(new Vector3(0, rotationStep));
     }
 
     public List<Vector3> GetAllBuildingPositions()
