@@ -93,13 +93,17 @@ PrefabInstance:
       value: ItemOreY Variant
       objectReference: {fileID: 0}
     - target: {fileID: 6881304343224174127, guid: f286f6a0f2f258944aa7d656b3684499, type: 3}
+      propertyPath: ID
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6881304343224174127, guid: f286f6a0f2f258944aa7d656b3684499, type: 3}
       propertyPath: Name
       value: OreY
       objectReference: {fileID: 0}
     - target: {fileID: 8160520717737717384, guid: f286f6a0f2f258944aa7d656b3684499, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 1892913273456648479, guid: f4c1745de5fb12249ba39926281c1861, type: 3}
+      objectReference: {fileID: 1560912926, guid: f4c1745de5fb12249ba39926281c1861, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
