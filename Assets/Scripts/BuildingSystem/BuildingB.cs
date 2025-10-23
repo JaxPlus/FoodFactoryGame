@@ -5,6 +5,7 @@ public class BuildingB : MonoBehaviour
     // TUTAJ TRZEBA BĘDZIE ZROBIĆ AUTOMATYZACJĘ
     public string Description => data.Description;
     public string Cost => data.Cost.ToString();
+    public int ID;
     private BuildingModel model;
     private BuildingData data;
 

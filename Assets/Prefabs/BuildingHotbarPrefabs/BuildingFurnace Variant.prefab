@@ -108,6 +108,10 @@ PrefabInstance:
       propertyPath: Name
       value: Furnace
       objectReference: {fileID: 0}
+    - target: {fileID: 6572464955082766123, guid: eb57597fe4e4ea845bf5e1b7de7edbaa, type: 3}
+      propertyPath: buildingData
+      value: 
+      objectReference: {fileID: 11400000, guid: d5f3bfb6554dec34bb39aedc99e78112, type: 2}
     - target: {fileID: 8160520717737717384, guid: eb57597fe4e4ea845bf5e1b7de7edbaa, type: 3}
       propertyPath: m_Sprite
       value: 

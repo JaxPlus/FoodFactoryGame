@@ -7,7 +7,7 @@ public class BuildingModel : MonoBehaviour
 {
     [SerializeField] private Transform wrapper;
     [SerializeField] public bool isRotatable = false;
-    public float Rotation => wrapper.transform.eulerAngles.y;
+    public float Rotation => wrapper.transform.eulerAngles.z;
     private BuildingShapeUnit[] shapeUnits;
 
     private void Awake()
@@ -18,8 +18,8 @@ public class BuildingModel : MonoBehaviour
     public void Rotate(float rotationStep)
     {
         if (!isRotatable) return;
-        
-        wrapper.Rotate(new Vector3(0, rotationStep));
+
+        wrapper.Rotate(new Vector3(0, 0, rotationStep));
     }
 
     public List<Vector3> GetAllBuildingPositions()

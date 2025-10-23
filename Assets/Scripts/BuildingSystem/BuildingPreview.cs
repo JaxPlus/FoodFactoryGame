@@ -8,18 +8,21 @@ public class BuildingPreview : MonoBehaviour
         POSITIVE,
         NEGATIVE,
     }
+
+    [SerializeField] private Material positiveMaterial;
+    [SerializeField] private Material negativeMaterial;
     
     public BuildingPreviewState State { get; private set; } = BuildingPreviewState.NEGATIVE;
     public BuildingData Data { get; private set; }
     public BuildingModel BuildingModel { get; private set; }
-    private List<SpriteRenderer> renderers = new();
+    private List<Renderer> renderers = new();
     private List<Collider> colliders = new();
 
     public void Setup(BuildingData data)
     {
         Data = data;
         BuildingModel = Instantiate(data.Model, transform.position, Quaternion.identity, transform);
-        renderers.AddRange(BuildingModel.GetComponentsInChildren<SpriteRenderer>());
+        renderers.AddRange(BuildingModel.GetComponentsInChildren<Renderer>());
         colliders.AddRange(BuildingModel.GetComponentsInChildren<Collider>());
 
         foreach (var col in colliders)
@@ -44,11 +47,18 @@ public class BuildingPreview : MonoBehaviour
     
     private void SetPreviewState(BuildingPreviewState newState)
     {
-        Color previewColor = newState == BuildingPreviewState.POSITIVE ? new Color(255, 255, 255, 80) : new Color(50, 50, 50, 200);
-        
-        foreach (var renderer in renderers)
+        Material previewMat = newState == BuildingPreviewState.POSITIVE ? positiveMaterial : negativeMaterial;
+
+        foreach(var rend in renderers)
         {
-            renderer.color = previewColor;
+            Material[] mats = new Material[rend.sharedMaterials.Length];
+
+            for (int i = 0; i < mats.Length; i++)
+            {
+                mats[i] = previewMat;
+            }
+
+            rend.materials = mats;
         }
     }
 }

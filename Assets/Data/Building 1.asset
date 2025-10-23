@@ -13,5 +13,7 @@ MonoBehaviour:
   m_Name: Building 1
   m_EditorClassIdentifier: Assembly-CSharp::BuildingData
   <Description>k__BackingField: Transport belt for transforming items.
-  <Cost>k__BackingField: 0
+  <Cost>k__BackingField:
+  - {fileID: 7214106429408896450, guid: 63f5db63ba80bcc4a99f9ee3a5964910, type: 3}
+  - {fileID: 7214106429408896450, guid: 63f5db63ba80bcc4a99f9ee3a5964910, type: 3}
   <Model>k__BackingField: {fileID: 8182590913111462371, guid: 4438b5e398bb33c4faba91f0e4c74aca, type: 3}

@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using UnityEngine.InputSystem;
 using UnityEngine.Rendering.Universal;
 
 public class BuildingSystem : MonoBehaviour
@@ -11,7 +12,21 @@ public class BuildingSystem : MonoBehaviour
     [SerializeField] private BuildingPreview previewPrefab;
     [SerializeField] private BuildingB buildingPrefab;
     [SerializeField] private BuildingGrid grid;
+    [SerializeField] private Camera playerCamera;
     private BuildingPreview preview;
+
+    public static BuildingSystem Instance { get; private set; }
+
+    private void Awake()
+    {
+        if (Instance != null && Instance != this)
+        {
+            Destroy(gameObject);
+            return;
+        }
+
+        Instance = this;
+    }
 
     private void Update()
     {
@@ -21,17 +36,12 @@ public class BuildingSystem : MonoBehaviour
         {
             HandlePreview(mousePos);
         }
-        else
-        {
-            if (Input.GetKeyDown(KeyCode.Alpha1))
-            {
-                preview = CreatePreview(buildingData1, mousePos);
-            }
-            else if (Input.GetKeyDown(KeyCode.Alpha2))
-            {
-                preview = CreatePreview(buildingData2, mousePos);
-            }
-        }
+    }
+
+    public void SetPreview(BuildingData data)
+    {
+        Vector3 mousePos = GetMousePosition();
+        preview = CreatePreview(data, mousePos);
     }
 
     private void HandlePreview(Vector3 mouseWorldPosition)
@@ -82,15 +92,9 @@ public class BuildingSystem : MonoBehaviour
 
     private Vector3 GetMousePosition()
     {
-        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-        Plane groundPlane = new Plane(Vector3.up, Vector3.zero);
+        Vector3 mouseWorldPos = playerCamera.ScreenToWorldPoint(Mouse.current.position.ReadValue());
 
-        if (groundPlane.Raycast(ray, out float distance))
-        {
-            return ray.GetPoint(distance);
-        }
-        
-        return Vector3.zero;
+        return mouseWorldPos;
     }
 
     private BuildingPreview CreatePreview(BuildingData data, Vector3 position)

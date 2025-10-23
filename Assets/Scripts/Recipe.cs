@@ -14,12 +14,12 @@ public class Recipe : MonoBehaviour, IPointerClickHandler
     private int ingredientsCount;
     private TMP_Text quantityText;
     
-    RecipeController recipeController;
+    //RecipeController recipeController;
 
     void Start()
     {
         inventoryController = InventoryController.Instance;
-        recipeController = RecipeController.Instance;
+        //recipeController = RecipeController.Instance;
         
         ingredientsDict = new Dictionary<int, int>();
         quantityText = GetComponentInChildren<TMP_Text>();
@@ -33,7 +33,7 @@ public class Recipe : MonoBehaviour, IPointerClickHandler
     {
         if (eventData.button != PointerEventData.InputButton.Left) return;
         
-        recipeController.AddRecipeToQueue(gameObject);
+        //recipeController.AddRecipeToQueue(gameObject);
         
         var invItems = inventoryController.GetInventorySaveItems();
 
