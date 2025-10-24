@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5f9e87230f281174683e0bbb75533749, type: 3}
   m_Name: Building 2
   m_EditorClassIdentifier: Assembly-CSharp::BuildingData
+  <Name>k__BackingField: Furnace
   <Description>k__BackingField: Furnace for smelting.
-  <Cost>k__BackingField: 0
+  <Cost>k__BackingField: []
   <Model>k__BackingField: {fileID: 6030975975432284345, guid: 47dc953aaac21dc42a3d61eee4fb32fc, type: 3}

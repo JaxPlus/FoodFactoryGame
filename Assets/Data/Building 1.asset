@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5f9e87230f281174683e0bbb75533749, type: 3}
   m_Name: Building 1
   m_EditorClassIdentifier: Assembly-CSharp::BuildingData
+  <Name>k__BackingField: Belt
   <Description>k__BackingField: Transport belt for transforming items.
   <Cost>k__BackingField:
   - {fileID: 7214106429408896450, guid: 63f5db63ba80bcc4a99f9ee3a5964910, type: 3}

@@ -1,19 +1,22 @@
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
 using UnityEngine.Rendering.Universal;
 
 public class BuildingSystem : MonoBehaviour
 {
     public const float CellSize = 1f;
-    [SerializeField] private BuildingData buildingData1;
-    [SerializeField] private BuildingData buildingData2;
     [SerializeField] private BuildingPreview previewPrefab;
     [SerializeField] private BuildingB buildingPrefab;
     [SerializeField] private BuildingGrid grid;
     [SerializeField] private Camera playerCamera;
+    [SerializeField] private GameObject hotbarBuildingInfo;
+    public int currentBuildingID { get; private set; } = -1;
     private BuildingPreview preview;
+    private int UILayer;
 
     public static BuildingSystem Instance { get; private set; }
 
@@ -28,6 +31,11 @@ public class BuildingSystem : MonoBehaviour
         Instance = this;
     }
 
+    private void Start()
+    {
+        UILayer = LayerMask.NameToLayer("UI");
+    }
+
     private void Update()
     {
         Vector3 mousePos = GetMousePosition();
@@ -38,10 +46,12 @@ public class BuildingSystem : MonoBehaviour
         }
     }
 
-    public void SetPreview(BuildingData data)
+    public void SetPreview(BuildingData data, int buildingID)
     {
         Vector3 mousePos = GetMousePosition();
+        hotbarBuildingInfo.GetComponent<HotbarBuildingInfo>().ShowBuildingInfo(data);
         preview = CreatePreview(data, mousePos);
+        currentBuildingID = buildingID;
     }
 
     private void HandlePreview(Vector3 mouseWorldPosition)
@@ -55,9 +65,10 @@ public class BuildingSystem : MonoBehaviour
             preview.transform.position = GetSnappedCenterPosition(buildPositions);
             preview.ChangeState(BuildingPreview.BuildingPreviewState.POSITIVE);
 
-            if (Input.GetMouseButtonDown(0))
+            if (Input.GetMouseButtonDown(0) && !IsPointerOverUIElement())
             {
                 PlaceBuilding(buildPositions);
+                hotbarBuildingInfo.GetComponent<HotbarBuildingInfo>().HideBuildingInfo();
             }
         }
         else
@@ -71,6 +82,12 @@ public class BuildingSystem : MonoBehaviour
         }
     }
 
+    public void StopPreview()
+    {
+        Destroy(preview.gameObject);
+        preview = null;
+    }
+
     private void PlaceBuilding(List<Vector3> buildPositions)
     {
         BuildingB building = Instantiate(buildingPrefab, preview.transform.position, Quaternion.identity);
@@ -78,6 +95,7 @@ public class BuildingSystem : MonoBehaviour
         grid.SetBuilding(building, buildPositions);
         Destroy(preview.gameObject);
         preview = null;
+        currentBuildingID = -1;
     }
 
     private Vector3 GetSnappedCenterPosition(List<Vector3> allBuildingPositions)
@@ -102,5 +120,28 @@ public class BuildingSystem : MonoBehaviour
         BuildingPreview buildingPreview = Instantiate(previewPrefab, position, Quaternion.identity);
         buildingPreview.Setup(data);
         return buildingPreview;
+    }
+    
+    public bool IsPointerOverUIElement()
+    {
+        return IsPointerOverUIElement(GetEventSystemRaycastResults());
+    }
+
+
+    //Returns 'true' if we touched or hovering on Unity UI element.
+    private bool IsPointerOverUIElement(List<RaycastResult> eventSystemRaycastResults)
+    {
+        return eventSystemRaycastResults.Any(curRaycastResult => curRaycastResult.gameObject.layer == UILayer);
+    }
+
+
+    //Gets all event system raycast results of current mouse or touch position.
+    static List<RaycastResult> GetEventSystemRaycastResults()
+    {
+        PointerEventData eventData = new PointerEventData(EventSystem.current);
+        eventData.position = Input.mousePosition;
+        List<RaycastResult> raycastResults = new List<RaycastResult>();
+        EventSystem.current.RaycastAll(eventData, raycastResults);
+        return raycastResults;
     }
 }

@@ -9,55 +9,69 @@ public class Building : MonoBehaviour, IPointerClickHandler
     public string Name;
     public BuildingCategory Category;
     public BuildingData buildingData;
-    [SerializeField] public GameObject hotbarInfo;
     private Dictionary<int, int> ingredientsDict;
     private int ingredientsCount;
-
-
+    
     void Start()
     {
         ingredientsDict = new Dictionary<int, int>();
         SetItemDictionary();
-        hotbarInfo.SetActive(false);
     }
 
     public void OnPointerClick(PointerEventData eventData)
     {
-        if (eventData.button == PointerEventData.InputButton.Left)
+        if (eventData.button != PointerEventData.InputButton.Left) return;
+
+        // @TODO Dokończyć to czy mamy wybrany dany budynek czy nie
+        if (BuildingSystem.Instance.currentBuildingID == -1)
         {
-            var invItems = InventoryController.Instance.GetInventorySaveItems();
+            StartBuilding();
+        }
+        else if (BuildingSystem.Instance.currentBuildingID != ID)
+        {
+            BuildingSystem.Instance.StopPreview();
+            StartBuilding();
+        }
+        else
+        {
+            BuildingSystem.Instance.StopPreview();
+        }
+    }
 
-            for (int i = 0; i < invItems.Count; i++)
-            {
-                if (ingredientsDict.ContainsKey(invItems[i].itemID))
-                {
-                    ingredientsDict[invItems[i].itemID] -= invItems[i].quantity;
-                }
-            }
+    private void StartBuilding()
+    {
+        var invItems = InventoryController.Instance.GetInventorySaveItems();
 
-            foreach (var i in ingredientsDict)
+        for (int i = 0; i < invItems.Count; i++)
+        {
+            if (ingredientsDict.ContainsKey(invItems[i].itemID))
             {
-                if (i.Value <= 0)
-                {
-                    ingredientsCount--;
-                }
+                ingredientsDict[invItems[i].itemID] -= invItems[i].quantity;
             }
+        }
 
-            if (ingredientsCount == 0)
+        foreach (var i in ingredientsDict)
+        {
+            if (i.Value <= 0)
             {
-                SetItemDictionary();
-                BuildingSystem.Instance.SetPreview(buildingData);
-                Debug.Log("Building finished.");
+                ingredientsCount--;
+            }
+        }
 
-                foreach (GameObject ingredient in buildingData.Cost)
-                {
-                    InventoryController.Instance.RemoveItem(ingredient);
-                }
-            }
-            else
+        if (ingredientsCount == 0)
+        {
+            SetItemDictionary();
+            BuildingSystem.Instance.SetPreview(buildingData, ID);
+            Debug.Log("Building finished.");
+
+            foreach (GameObject ingredient in buildingData.Cost)
             {
-                Debug.Log("Not enough items.");
+                InventoryController.Instance.RemoveItem(ingredient);
             }
+        }
+        else
+        {
+            Debug.Log("Not enough items.");
         }
     }
 

@@ -345,7 +345,7 @@ GameObject:
   - component: {fileID: 439748909}
   - component: {fileID: 439748908}
   m_Layer: 5
-  m_Name: BuildingName
+  m_Name: BuildingDesc
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -367,8 +367,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -25, y: -25}
-  m_SizeDelta: {x: 200, y: 50}
+  m_AnchoredPosition: {x: -50, y: -24.65}
+  m_SizeDelta: {x: 200, y: 50.7}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &439748908
 MonoBehaviour:
@@ -617,7 +617,7 @@ GameObject:
   - component: {fileID: 480428209}
   - component: {fileID: 480428208}
   m_Layer: 5
-  m_Name: BuildingDesc
+  m_Name: BuildingName
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -639,7 +639,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -25, y: 25}
+  m_AnchoredPosition: {x: -50, y: 25.700012}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &480428208
@@ -1172,12 +1172,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 92448f83ed763fe42afee33f4228c205, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BuildingSystem
-  buildingData1: {fileID: 11400000, guid: eca0ba3b3c5eb8c40aac17bc3a1b30f1, type: 2}
-  buildingData2: {fileID: 11400000, guid: d5f3bfb6554dec34bb39aedc99e78112, type: 2}
   previewPrefab: {fileID: 5069432347581274842, guid: 189c6c414ab38f341907a6173c887876, type: 3}
   buildingPrefab: {fileID: 5154464280287785808, guid: 9a47b12c8479a294fadfbce947add093, type: 3}
   grid: {fileID: 1121746338}
   playerCamera: {fileID: 519420031}
+  hotbarBuildingInfo: {fileID: 1126323644}
 --- !u!1 &707027789
 GameObject:
   m_ObjectHideFlags: 0
@@ -1659,7 +1658,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_GlobalIlluminationMeshLod: 0
-  m_SortingLayerID: 1325545647
+  m_SortingLayerID: -1316199543
   m_SortingLayer: 4
   m_SortingOrder: 0
   m_Sprite: {fileID: -1239551542, guid: 5869ae79a7cd23c4ca4aec7b8c542975, type: 3}
@@ -1782,7 +1781,7 @@ TilemapRenderer:
   m_LightmapParameters: {fileID: 0}
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 1502419111
-  m_SortingLayer: 1
+  m_SortingLayer: 0
   m_SortingOrder: 0
   m_ChunkSize: {x: 32, y: 32, z: 32}
   m_ChunkCullingBounds: {x: 0, y: 0, z: 0}
@@ -4759,8 +4758,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 175, y: 0}
-  m_SizeDelta: {x: -400, y: -50}
+  m_AnchoredPosition: {x: 162.61047, y: 0.3499756}
+  m_SizeDelta: {x: -345.22092, y: -49.3}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1041602181
 MonoBehaviour:
@@ -4979,8 +4978,8 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1368486020}
-  - {fileID: 439748907}
   - {fileID: 480428207}
+  - {fileID: 439748907}
   - {fileID: 1041602180}
   m_Father: {fileID: 2134770354}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -5001,6 +5000,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d43e8d5234cdd9f42907488142403585, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
+  buildingIcon: {fileID: 1368486019}
+  buildingName: {fileID: 480428208}
+  buildingDesc: {fileID: 439748908}
+  buildingCost: {fileID: 1041602179}
 --- !u!114 &1126323647
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5255,7 +5258,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -200, y: 0}
+  m_AnchoredPosition: {x: -210, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1368486021
@@ -5426,7 +5429,7 @@ TilemapRenderer:
   m_LightmapParameters: {fileID: 0}
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 1502419111
-  m_SortingLayer: 1
+  m_SortingLayer: 0
   m_SortingOrder: 0
   m_ChunkSize: {x: 32, y: 32, z: 32}
   m_ChunkCullingBounds: {x: 0, y: 0, z: 0}
