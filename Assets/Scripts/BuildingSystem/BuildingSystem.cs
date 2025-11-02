@@ -4,7 +4,6 @@ using System.Linq;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
-using UnityEngine.Rendering.Universal;
 
 public class BuildingSystem : MonoBehaviour
 {
@@ -17,6 +16,8 @@ public class BuildingSystem : MonoBehaviour
     public int currentBuildingID { get; private set; } = -1;
     private BuildingPreview preview;
     private int UILayer;
+    private Dictionary<int, int> ingredientsDict;
+    private int ingredientsCount;
 
     public static BuildingSystem Instance { get; private set; }
 
@@ -34,6 +35,7 @@ public class BuildingSystem : MonoBehaviour
     private void Start()
     {
         UILayer = LayerMask.NameToLayer("UI");
+        ingredientsDict = new Dictionary<int, int>();
     }
 
     private void Update()
@@ -67,8 +69,16 @@ public class BuildingSystem : MonoBehaviour
 
             if (Input.GetMouseButtonDown(0) && !IsPointerOverUIElement())
             {
-                PlaceBuilding(buildPositions);
-                hotbarBuildingInfo.GetComponent<HotbarBuildingInfo>().HideBuildingInfo();
+                if (HasEnoughResources(preview.Data))
+                {
+                    PlaceBuilding(buildPositions);
+                    hotbarBuildingInfo.GetComponent<HotbarBuildingInfo>().HideBuildingInfo();
+                    Debug.Log("Building complete");
+                }
+                else
+                {
+                    Debug.Log("Not enough resources");
+                }
             }
         }
         else
@@ -81,11 +91,64 @@ public class BuildingSystem : MonoBehaviour
             preview.Rotate(90);
         }
     }
+    private bool HasEnoughResources(BuildingData data)
+    {
+        SetItemDictionary(data);
+        var invItems = InventoryController.Instance.GetInventorySaveItems();
+
+        for (int i = 0; i < invItems.Count; i++)
+        {
+            if (ingredientsDict.ContainsKey(invItems[i].itemID))
+            {
+                ingredientsDict[invItems[i].itemID] -= invItems[i].quantity;
+            }
+        }
+
+        ingredientsCount = ingredientsDict.Count;
+
+        foreach (var i in ingredientsDict)
+        {
+            if (i.Value <= 0)
+            {
+                ingredientsCount--;
+            }
+        }
+
+        if (ingredientsCount == 0)
+        {
+            foreach (GameObject ingredient in data.Cost)
+            {
+                InventoryController.Instance.RemoveItem(ingredient);
+            }
+
+            return true;
+        }
+        
+        return false;
+    }
+
+    private void SetItemDictionary(BuildingData buildingData)
+    {
+        ingredientsDict.Clear();
+        foreach (GameObject items in buildingData.Cost)
+        {
+            var currItem = items.GetComponent<Item>();
+
+            if (!ingredientsDict.TryAdd(currItem.ID, 1))
+            {
+                ingredientsDict[currItem.ID]++;
+            }
+        }
+
+        ingredientsCount = ingredientsDict.Count;
+    }
 
     public void StopPreview()
     {
         Destroy(preview.gameObject);
+        currentBuildingID = -1;
         preview = null;
+        hotbarBuildingInfo.GetComponent<HotbarBuildingInfo>().HideBuildingInfo();
     }
 
     private void PlaceBuilding(List<Vector3> buildPositions)
@@ -127,13 +190,11 @@ public class BuildingSystem : MonoBehaviour
         return IsPointerOverUIElement(GetEventSystemRaycastResults());
     }
 
-
     //Returns 'true' if we touched or hovering on Unity UI element.
     private bool IsPointerOverUIElement(List<RaycastResult> eventSystemRaycastResults)
     {
         return eventSystemRaycastResults.Any(curRaycastResult => curRaycastResult.gameObject.layer == UILayer);
     }
-
 
     //Gets all event system raycast results of current mouse or touch position.
     static List<RaycastResult> GetEventSystemRaycastResults()

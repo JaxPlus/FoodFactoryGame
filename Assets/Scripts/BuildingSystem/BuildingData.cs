@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [CreateAssetMenu(menuName = "Data/Building")]
+[System.Serializable]
 public class BuildingData : ScriptableObject
 {
     [field:SerializeField] public string Name { get; private set; }

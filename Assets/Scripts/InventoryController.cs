@@ -10,7 +10,7 @@ public class InventoryController : MonoBehaviour
 
     public GameObject inventoryPanel;
     public GameObject slotPrefab;
-    public int slotCount = 105;
+    public int slotCount = 77;
     //public GameObject[] itemPrefabs;
 
     public static InventoryController Instance { get; private set; }

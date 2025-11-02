@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using UnityEngine;
 
+[Serializable]
 public class BuildingGrid : MonoBehaviour
 {
     [SerializeField] private int height;
@@ -19,6 +20,28 @@ public class BuildingGrid : MonoBehaviour
                 grid[x, y] = new BuildingGridCell();
             }
         }
+    }
+
+    public List<BuildingGridCellData> GetBuildingGridCells()
+    {
+        List<BuildingGridCellData> buildingGridCellData = new List<BuildingGridCellData>(height * width);
+        for (int x = 0; x < grid.GetLength(0); x++)
+        {
+            for (int y = 0; y < grid.GetLength(1); y++)
+            {
+                buildingGridCellData.Add(new BuildingGridCellData
+                {
+                    buildingID = grid[x, y].GetBuildingID()
+                });
+            }
+        }
+
+        return buildingGridCellData;
+    }
+
+    public void SetBuildingGridCells(BuildingGridCell[,] gridCells)
+    {
+        grid = gridCells;
     }
 
     public void SetBuilding(BuildingB building, List<Vector3> allBuildingPositions)
@@ -81,6 +104,12 @@ public class BuildingGridCell
     public void SetBuilding(BuildingB building)
     {
         this.building = building;
+    }
+
+    public int GetBuildingID()
+    {
+        if (building == null) return -1;
+        return building.ID;
     }
 
     public bool IsEmpty()
