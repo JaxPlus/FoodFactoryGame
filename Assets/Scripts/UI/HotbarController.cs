@@ -3,7 +3,6 @@ using UnityEngine;
 public class HotbarController : MonoBehaviour
 {
     public GameObject[] panels;
-    public GameObject slotPrefab;
     public int[] slotCounts = {2, 1};
     private int currentPanelActive = 0;
 

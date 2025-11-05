@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using System.IO;
 using UnityEngine;
 
@@ -25,8 +26,6 @@ public class SaveController : MonoBehaviour
             buildingGridData = buildingGrid.GetBuildingGridCells(),
         };
 
-        Debug.Log(JsonUtility.ToJson(saveData.buildingGridData));
-
         File.WriteAllText(saveLocation, JsonUtility.ToJson(saveData));
     }
 
@@ -41,12 +40,13 @@ public class SaveController : MonoBehaviour
     {
         if (File.Exists(saveLocation))
         {
+            Debug.Log("Loading Game");
             SaveData saveData = JsonUtility.FromJson<SaveData>(File.ReadAllText(saveLocation));
 
             GameObject.FindGameObjectWithTag("Player").transform.position = saveData.playerPosition;
 
             inventoryController.SetInventoryData(saveData.inventorySaveData);
-            //buildingGrid.SetBuildingGridCells(saveData.buildingGridData);
+            buildingGrid.SetBuildingGridCells(saveData.buildingGridData);
         }
         else
         {

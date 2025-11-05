@@ -9,9 +9,10 @@ public class BuildingB : MonoBehaviour
     private BuildingModel model;
     private BuildingData data;
 
-    public void Setup(BuildingData data, float rotation)
+    public void Setup(BuildingData data, float rotation, int ID)
     {
         this.data = data;
+        this.ID = ID;
         model = Instantiate(data.Model, transform.position, Quaternion.identity, transform);
         model.Rotate(rotation);
     }

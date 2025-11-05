@@ -4,9 +4,8 @@ using UnityEngine;
 public class BuildingDictionary : MonoBehaviour
 {
     public List<Building> buildingPrefabs;
-    public List<BuildingModel> buildingModelPrefabs;
+    public List<BuildingData> buildingDataList;
     private Dictionary<int, GameObject> buildingDictionary;
-    private Dictionary<int, GameObject> buildingModelDictionary;
 
     private void Awake()
     {
@@ -18,25 +17,15 @@ public class BuildingDictionary : MonoBehaviour
             {
                 buildingPrefabs[i].ID = i + 1;
             }
-
-            //if (buildingModelPrefabs[i] != null)
-            //{
-            //    //buildingModelPrefabs[i].ID = i + 1;
-            //}
         }
 
         foreach (Building building in buildingPrefabs)
         {
             buildingDictionary[building.ID] = building.gameObject;
         }
-
-        //foreach (Building building in buildingModelPrefabs)
-        //{
-        //    buildingModelDictionary[building.ID] = building.gameObject;
-        //}
     }
 
-    public GameObject GetItemPrefab(int buildingID)
+    public GameObject GetBuildingPrefab(int buildingID)
     {
         buildingDictionary.TryGetValue(buildingID, out GameObject prefab);
 
@@ -48,15 +37,23 @@ public class BuildingDictionary : MonoBehaviour
         return prefab;
     }
 
-    public GameObject GetBuildingModelPrefab(int buildingID)
+    public BuildingData GetBuildingData(int buildingID)
     {
-        buildingModelDictionary.TryGetValue(buildingID, out GameObject prefab);
+        buildingDictionary.TryGetValue(buildingID, out GameObject prefab);
 
         if (prefab == null)
         {
             Debug.LogWarning($"Building model with ID {buildingID} doesn't exists");
         }
 
-        return prefab;
+        foreach (BuildingData data in buildingDataList)
+        {
+            if (data.Name == prefab.GetComponent<Building>().Name)
+            {
+                return data;
+            }
+        }
+
+        return null;
     }
 }

@@ -1,16 +1,21 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 [Serializable]
 public class BuildingGrid : MonoBehaviour
 {
+    [SerializeField] public BuildingB buildingPrefab;
+
     [SerializeField] private int height;
     [SerializeField] private int width;
     private BuildingGridCell[,] grid;
+    private BuildingDictionary dictionary;
 
     private void Start()
     {
+        dictionary = FindFirstObjectByType<BuildingDictionary>();
         grid = new BuildingGridCell[height, width];
 
         for (int x = 0; x < grid.GetLength(0); x++)
@@ -31,7 +36,9 @@ public class BuildingGrid : MonoBehaviour
             {
                 buildingGridCellData.Add(new BuildingGridCellData
                 {
-                    buildingID = grid[x, y].GetBuildingID()
+                    buildingID = grid[x, y].GetBuildingID(),
+                    buildingPosition = grid[x, y].GetBuildingPosition(),
+                    rotation = grid[x, y].GetBuildingRotation(),
                 });
             }
         }
@@ -39,9 +46,23 @@ public class BuildingGrid : MonoBehaviour
         return buildingGridCellData;
     }
 
-    public void SetBuildingGridCells(BuildingGridCell[,] gridCells)
+    public void SetBuildingGridCells(List<BuildingGridCellData> buildingGridCellsData)
     {
-        grid = gridCells;
+        int i = 0;
+        for (int x = 0; x < grid.GetLength(0); x++)
+        {
+            for (int y = 0; y < grid.GetLength(1); y++)
+            {
+                if (buildingGridCellsData[i].buildingID == -1)
+                    continue;
+
+                BuildingData data = dictionary.GetBuildingData(buildingGridCellsData[i].buildingID);
+                BuildingB building = Instantiate(buildingPrefab, buildingGridCellsData[i].buildingPosition, Quaternion.identity);
+                building.Setup(data, buildingGridCellsData[i].rotation, buildingGridCellsData[i].buildingID);
+                SetBuilding(building, building.GetData().Model.GetAllBuildingPositions());
+                i++;
+            }
+        }
     }
 
     public void SetBuilding(BuildingB building, List<Vector3> allBuildingPositions)
@@ -110,6 +131,18 @@ public class BuildingGridCell
     {
         if (building == null) return -1;
         return building.ID;
+    }
+
+    public Vector3 GetBuildingPosition()
+    {
+        if (building == null) return Vector3.zero;
+        return building.transform.position;
+    }
+
+    public float GetBuildingRotation()
+    {
+        if (building == null) return 0;
+        return building.GetData().Model.Rotation;
     }
 
     public bool IsEmpty()
