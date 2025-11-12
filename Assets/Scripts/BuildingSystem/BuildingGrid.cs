@@ -48,6 +48,9 @@ public class BuildingGrid : MonoBehaviour
 
     public void SetBuildingGridCells(List<BuildingGridCellData> buildingGridCellsData)
     {
+        if (buildingGridCellsData.Count == 0) 
+            return;
+
         int i = 0;
         for (int x = 0; x < grid.GetLength(0); x++)
         {

@@ -11,4 +11,5 @@ public class BuildingData : ScriptableObject
     // Trzeba będzie zrobić z tym porządek
     [field:SerializeField] public List<GameObject> Cost { get; private set; }
     [field:SerializeField] public BuildingModel Model { get; private set; }
+    [field:SerializeField] public BuildingB Prefab { get; private set; }
 }

@@ -1,3 +1,5 @@
+using NUnit.Framework;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class BuildingB : MonoBehaviour
@@ -6,6 +8,8 @@ public class BuildingB : MonoBehaviour
     public string Description => data.Description;
     public string Cost => data.Cost.ToString();
     public int ID;
+    [SerializeField] public List<Item> inputInventory = new List<Item>(0);
+    public BuildingB output;
     private BuildingModel model;
     private BuildingData data;
 
@@ -15,10 +19,16 @@ public class BuildingB : MonoBehaviour
         this.ID = ID;
         model = Instantiate(data.Model, transform.position, Quaternion.identity, transform);
         model.Rotate(rotation);
+        output = null;
     }
 
     public BuildingData GetData()
     {
         return data;
+    }
+
+    public void SetOutput(BuildingB outputBuilding)
+    {
+        output = outputBuilding;
     }
 }

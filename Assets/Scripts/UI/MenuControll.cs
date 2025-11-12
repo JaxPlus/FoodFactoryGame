@@ -3,7 +3,7 @@ using UnityEngine;
 public class MenuControll : MonoBehaviour
 {
     public GameObject menuCanvas;
-    public GameObject recipeTip;
+    // public GameObject recipeTip;
 
     void Start()
     {

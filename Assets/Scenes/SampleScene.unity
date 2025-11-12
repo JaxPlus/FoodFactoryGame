@@ -2085,8 +2085,8 @@ TilemapRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_GlobalIlluminationMeshLod: 0
-  m_SortingLayerID: 1502419111
-  m_SortingLayer: 0
+  m_SortingLayerID: 337401089
+  m_SortingLayer: 1
   m_SortingOrder: 0
   m_ChunkSize: {x: 32, y: 32, z: 32}
   m_ChunkCullingBounds: {x: 0, y: 0, z: 0}
@@ -5235,8 +5235,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BuildingGrid
   buildingPrefab: {fileID: 5154464280287785808, guid: 9a47b12c8479a294fadfbce947add093, type: 3}
-  height: 2
-  width: 2
+  height: 20
+  width: 20
 --- !u!4 &1121746339
 Transform:
   m_ObjectHideFlags: 0
@@ -5612,7 +5612,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1313698374}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 331420928}
+        m_TargetAssemblyTypeName: PauseWindowController, Assembly-CSharp
+        m_MethodName: Reasume
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1313698374
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5855,8 +5867,8 @@ TilemapRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_GlobalIlluminationMeshLod: 0
-  m_SortingLayerID: 1502419111
-  m_SortingLayer: 0
+  m_SortingLayerID: 337401089
+  m_SortingLayer: 1
   m_SortingOrder: 0
   m_ChunkSize: {x: 32, y: 32, z: 32}
   m_ChunkCullingBounds: {x: 0, y: 0, z: 0}
@@ -6262,7 +6274,12 @@ MonoBehaviour:
   - {fileID: 7273961396949670521, guid: 34347de8d63acc846ad80d68d30f661c, type: 3}
   - {fileID: 3335394916267832639, guid: c82e0033ece78cd4c8cf303f43ee9e4f, type: 3}
   - {fileID: 7314526391762562136, guid: 6d11a8484afd7d741a3111e2b3da3244, type: 3}
-  buildingDataList: []
+  buildingDataList:
+  - {fileID: 11400000, guid: eca0ba3b3c5eb8c40aac17bc3a1b30f1, type: 2}
+  - {fileID: 11400000, guid: d5f3bfb6554dec34bb39aedc99e78112, type: 2}
+  - {fileID: 11400000, guid: e4d636067054dff4da185f7dffbc51dc, type: 2}
+  - {fileID: 11400000, guid: a477910b250d74a41964da6d12236204, type: 2}
+  - {fileID: 11400000, guid: b6dadab454a7a4c41bd3e9152a22dc23, type: 2}
 --- !u!1 &1572825159
 GameObject:
   m_ObjectHideFlags: 0
@@ -6413,7 +6430,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1646764309}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4aa5c4edd6e6fe44d9daa4307bf77e7f, type: 3}
+  m_Script: {fileID: 11500000, guid: 67b81a098c8da644ca0ffe8b898f4d75, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
   panels:
@@ -7589,7 +7606,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 2008440898}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1fbd6cc15ca37f443805a18e87f46a73, type: 3}
+  m_Script: {fileID: 11500000, guid: bebcc1f2056e3144993f42d3a4c23901, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
   tabImages:
@@ -7597,7 +7614,7 @@ MonoBehaviour:
   - {fileID: 747954632}
   pages:
   - {fileID: 1572825159}
-  - {fileID: 1278824942}
+  - {fileID: 1046717089}
   - {fileID: 1046717089}
 --- !u!1 &2062505674
 GameObject:
@@ -8000,11 +8017,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 2134770350}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 033f1ab6763504843a9c74f25163ccbc, type: 3}
+  m_Script: {fileID: 11500000, guid: 0f4306236e7ed91439ca0929de316d9d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
   menuCanvas: {fileID: 972675628}
-  recipeTip: {fileID: 1761549523}
 --- !u!114 &2134770356
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8014,7 +8030,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 2134770350}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 11577b7444b37c0478f2284c464c5209, type: 3}
+  m_Script: {fileID: 11500000, guid: f0246d9de41ffee469f0618215f7df59, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::HoverTipManager
   itemName: {fileID: 1691015546}
@@ -8054,11 +8070,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1623313385203595702, guid: c3bc3649f63055b40a2fffc7c530242f, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 0
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 1623313385203595702, guid: c3bc3649f63055b40a2fffc7c530242f, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 0
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 1623313385203595702, guid: c3bc3649f63055b40a2fffc7c530242f, type: 3}
       propertyPath: m_LocalPosition.x
