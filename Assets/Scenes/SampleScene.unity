@@ -493,7 +493,6 @@ GameObject:
   - component: {fileID: 361801876}
   - component: {fileID: 361801875}
   - component: {fileID: 361801874}
-  - component: {fileID: 361801877}
   m_Layer: 0
   m_Name: GameController
   m_TagString: Untagged
@@ -546,20 +545,6 @@ Transform:
   - {fileID: 634398540}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &361801877
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 361801873}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 069b69c8ad8d71143bfcbf4afd457a05, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: '::'
-  recipeQueue: []
-  recipeWindow: {fileID: 2105374161}
 --- !u!1 &439748906
 GameObject:
   m_ObjectHideFlags: 0
@@ -6436,7 +6421,7 @@ MonoBehaviour:
   panels:
   - {fileID: 864010180}
   - {fileID: 2062505674}
-  slotCounts: 0200000001000000
+  slotCounts: 0200000003000000
 --- !u!114 &1646764312
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7614,7 +7599,7 @@ MonoBehaviour:
   - {fileID: 747954632}
   pages:
   - {fileID: 1572825159}
-  - {fileID: 1046717089}
+  - {fileID: 1278824942}
   - {fileID: 1046717089}
 --- !u!1 &2062505674
 GameObject:
@@ -8070,11 +8055,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1623313385203595702, guid: c3bc3649f63055b40a2fffc7c530242f, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 100
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1623313385203595702, guid: c3bc3649f63055b40a2fffc7c530242f, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 100
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1623313385203595702, guid: c3bc3649f63055b40a2fffc7c530242f, type: 3}
       propertyPath: m_LocalPosition.x
@@ -8140,7 +8125,12 @@ PrefabInstance:
       propertyPath: m_Name
       value: RecipeOrganicPaste
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 8462235003938522677, guid: c3bc3649f63055b40a2fffc7c530242f, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 8462235003938522677, guid: c3bc3649f63055b40a2fffc7c530242f, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []

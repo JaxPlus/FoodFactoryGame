@@ -45,7 +45,7 @@ TagManager:
   - name: Ground
     uniqueID: 337401089
     locked: 0
-  - name: WalkInFront
+  - name: WalkIn Front
     uniqueID: 1308573871
     locked: 0
   - name: Collision
