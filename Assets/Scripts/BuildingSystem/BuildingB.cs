@@ -8,8 +8,8 @@ public class BuildingB : MonoBehaviour
     public string Description => data.Description;
     public string Cost => data.Cost.ToString();
     public int ID;
-    [SerializeField] public List<Item> inputInventory = new List<Item>(0);
-    public BuildingB output;
+    [SerializeField] public List<Item> inputInventory = new(0);
+    private BuildingB output;
     private BuildingModel model;
     private BuildingData data;
 
@@ -19,7 +19,14 @@ public class BuildingB : MonoBehaviour
         this.ID = ID;
         model = Instantiate(data.Model, transform.position, Quaternion.identity, transform);
         model.Rotate(rotation);
-        output = null;
+
+        // PIEC PRZEZ TO NIE MA OUTPUTA
+        if (inputInventory.Capacity != 0)
+        {
+            OutputPoint outputPoint = model.GetComponentInChildren<OutputPoint>();
+            outputPoint.building = this;
+            Destroy(outputPoint.GetComponent<SpriteRenderer>());
+        }
     }
 
     public BuildingData GetData()

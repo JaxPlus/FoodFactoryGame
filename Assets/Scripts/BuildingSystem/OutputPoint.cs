@@ -2,24 +2,25 @@ using UnityEngine;
 
 public class OutputPoint : MonoBehaviour
 {
-    // Gdzie to jest na gridzie
-    public int x;
-    public int y;
+    [SerializeField] public BuildingB building;
 
     private void Update()
     {
         Vector2 position = transform.position;
         Vector2 size = GetComponent<BoxCollider2D>().size;
 
+        if (!building)
+            return;
+        
         Collider2D hit = Physics2D.OverlapBox(position, size, 0f);
-        if (hit != null && hit.tag == "Model" && hit.gameObject.GetComponentInParent<BuildingB>() != null)
+        if (hit != null && hit.CompareTag("Model") && hit.gameObject.GetComponentInParent<BuildingB>() != null)
         {
-            BuildingB building = hit.gameObject.GetComponentInParent<BuildingB>();
+            BuildingB output = hit.gameObject.GetComponentInParent<BuildingB>();
 
-            if (building.inputInventory.Count < 0)
+            if (output.inputInventory.Count < 0)
                 return;
 
-            Debug.Log(building.ID);
+            building.SetOutput(output);
         }
     }
 }

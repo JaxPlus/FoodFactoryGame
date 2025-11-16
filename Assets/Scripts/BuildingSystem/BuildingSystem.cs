@@ -38,6 +38,7 @@ public class BuildingSystem : MonoBehaviour
         ingredientsDict = new Dictionary<int, int>();
     }
 
+    // @TODO Zrobić niszczenie budynków
     private void Update()
     {
         Vector3 mousePos = GetMousePosition();

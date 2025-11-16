@@ -15,7 +15,7 @@ public class Recipe : MonoBehaviour, IPointerClickHandler
     private TMP_Text quantityText;
     
     //RecipeController recipeController;
-
+    
     void Start()
     {
         inventoryController = InventoryController.Instance;
@@ -25,7 +25,7 @@ public class Recipe : MonoBehaviour, IPointerClickHandler
         quantityText = GetComponentInChildren<TMP_Text>();
         result.GetComponent<Item>().quantity = resultQuantity;
         quantityText.text = resultQuantity.ToString();
-
+        
         SetItemDictionary();
     }
     
