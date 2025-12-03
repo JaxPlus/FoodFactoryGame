@@ -68,6 +68,14 @@ public class BuildingGrid : MonoBehaviour
         }
     }
 
+    public void DestroyBuilding(string guid)
+    {
+        foreach (BuildingGridCell buildingGridCell in grid)
+        {
+            buildingGridCell.DeleteBuilding(guid);
+        }
+    }
+
     public void SetBuilding(BuildingB building, List<Vector3> allBuildingPositions)
     {
         foreach (var position in allBuildingPositions)
@@ -133,7 +141,17 @@ public class BuildingGridCell
     public int GetBuildingID()
     {
         if (building == null) return -1;
-        return building.ID;
+        return building.buildingID;
+    }
+
+    public void DeleteBuilding(string guid)
+    {
+        if (building == null) return;
+
+        if (building.buildingGuid == guid)
+        {
+            building = null;
+        }
     }
 
     public Vector3 GetBuildingPosition()

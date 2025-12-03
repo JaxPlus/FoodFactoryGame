@@ -13,7 +13,7 @@ public class OutputPoint : MonoBehaviour
             return;
         
         Collider2D hit = Physics2D.OverlapBox(position, size, 0f);
-        if (hit != null && hit.CompareTag("Model") && hit.gameObject.GetComponentInParent<BuildingB>() != null)
+        if (hit != null && hit.CompareTag("Building") && hit.gameObject.GetComponentInParent<BuildingB>() != null)
         {
             BuildingB output = hit.gameObject.GetComponentInParent<BuildingB>();
 

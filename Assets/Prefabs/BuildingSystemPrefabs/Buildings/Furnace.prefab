@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &949044770280461685
+--- !u!1 &717310049526629180
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,23 +8,23 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 8510158851676095215}
-  - component: {fileID: 6363233304250769784}
-  - component: {fileID: 4965347252348279524}
+  - component: {fileID: 5916164369774263231}
+  - component: {fileID: 559715518011073067}
+  - component: {fileID: 6836774445667529498}
   m_Layer: 0
-  m_Name: Belt
+  m_Name: Furnace
   m_TagString: Building
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &8510158851676095215
+--- !u!4 &5916164369774263231
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 949044770280461685}
+  m_GameObject: {fileID: 717310049526629180}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
@@ -33,31 +33,28 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &6363233304250769784
+--- !u!114 &559715518011073067
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 949044770280461685}
+  m_GameObject: {fileID: 717310049526629180}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b112cf0a8ff2eea43a4758ffe113ec55, type: 3}
+  m_Script: {fileID: 11500000, guid: 3ec863abafa0cc742a8e3e20b90d61e3, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Belt
-  buildingID: 0
-  buildingGuid: 
+  m_EditorClassIdentifier: '::'
+  ID: 0
   inputInventory:
   - {fileID: 0}
-  - {fileID: 0}
-  output: {fileID: 0}
---- !u!61 &4965347252348279524
+--- !u!61 &6836774445667529498
 BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 949044770280461685}
+  m_GameObject: {fileID: 717310049526629180}
   m_Enabled: 1
   serializedVersion: 3
   m_Density: 1
@@ -95,5 +92,5 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 1, y: 2}
   m_EdgeRadius: 0

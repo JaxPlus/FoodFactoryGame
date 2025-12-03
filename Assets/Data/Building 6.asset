@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5f9e87230f281174683e0bbb75533749, type: 3}
-  m_Name: Building 2
+  m_Name: Building 6
   m_EditorClassIdentifier: Assembly-CSharp::BuildingData
-  <Name>k__BackingField: Furnace
-  <Description>k__BackingField: Furnace for smelting.
+  <Name>k__BackingField: Item Distributor.
+  <Description>k__BackingField: TEST BUILDING.
   <Cost>k__BackingField: []
-  <Model>k__BackingField: {fileID: 6030975975432284345, guid: c6bda2bf4bf585e43867559c55b4e1cc, type: 3}
-  <Prefab>k__BackingField: {fileID: 559715518011073067, guid: 206668584874e8f4899ac44496d98eea, type: 3}
+  <Model>k__BackingField: {fileID: 8549644607240097070, guid: 3a0ad16e2c7527843a677bfca0cf503a, type: 3}
+  <Prefab>k__BackingField: {fileID: 9020607744368229448, guid: 77fc1e93f749ffc4f888345b808e254b, type: 3}

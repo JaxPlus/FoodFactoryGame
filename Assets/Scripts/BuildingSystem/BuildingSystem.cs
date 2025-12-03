@@ -13,6 +13,7 @@ public class BuildingSystem : MonoBehaviour
     [SerializeField] private BuildingGrid grid;
     [SerializeField] private Camera playerCamera;
     [SerializeField] private GameObject hotbarBuildingInfo;
+    [SerializeField] private GameObject buildingGrid;
     public int currentBuildingID { get; private set; } = -1;
     private BuildingPreview preview;
     private int UILayer;
@@ -155,6 +156,7 @@ public class BuildingSystem : MonoBehaviour
     private void PlaceBuilding(List<Vector3> buildPositions)
     {
         BuildingB building = Instantiate(preview.Data.Prefab != null ? preview.Data.Prefab : buildingPrefab, preview.transform.position, Quaternion.identity);
+        building.transform.SetParent(buildingGrid.transform);
         building.Setup(preview.Data, preview.BuildingModel.Rotation, currentBuildingID);
         grid.SetBuilding(building, buildPositions);
         Destroy(preview.gameObject);

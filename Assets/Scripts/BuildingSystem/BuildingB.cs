@@ -7,25 +7,29 @@ public class BuildingB : MonoBehaviour
     // TUTAJ TRZEBA BĘDZIE ZROBIĆ AUTOMATYZACJĘ
     public string Description => data.Description;
     public string Cost => data.Cost.ToString();
-    public int ID;
-    [SerializeField] public List<Item> inputInventory = new(0);
-    private BuildingB output;
+    public int buildingID;
+    public string buildingGuid;
+    [SerializeField] public List<GameObject> inputInventory = new(0);
+    [SerializeField] protected int maxCapacity;
+    public BuildingB output;
     private BuildingModel model;
     private BuildingData data;
 
     public void Setup(BuildingData data, float rotation, int ID)
     {
         this.data = data;
-        this.ID = ID;
+        buildingID = ID;
+        buildingGuid = System.Guid.NewGuid().ToString();
         model = Instantiate(data.Model, transform.position, Quaternion.identity, transform);
         model.Rotate(rotation);
 
-        // PIEC PRZEZ TO NIE MA OUTPUTA
         if (inputInventory.Capacity != 0)
         {
             OutputPoint outputPoint = model.GetComponentInChildren<OutputPoint>();
             outputPoint.building = this;
             Destroy(outputPoint.GetComponent<SpriteRenderer>());
+
+            maxCapacity = inputInventory.Capacity;
         }
     }
 
@@ -37,5 +41,22 @@ public class BuildingB : MonoBehaviour
     public void SetOutput(BuildingB outputBuilding)
     {
         output = outputBuilding;
+    }
+
+    public virtual void AddToInventory(GameObject item)
+    {
+        for (int i = 0; i < inputInventory.Count; i++)
+        {
+            if (inputInventory[i] == null)
+            {
+                inputInventory[i] = item;
+            }
+            else
+            {
+                continue;
+            }
+        }
+
+        return;
     }
 }
