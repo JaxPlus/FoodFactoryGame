@@ -1,19 +1,21 @@
+using System;
 using UnityEngine;
 
 public class OutputPoint : MonoBehaviour
 {
     [SerializeField] public BuildingB building;
+    public LayerMask buildingMask;
 
-    private void Update()
+    private void FixedUpdate()
     {
+        if (building == null) return;
+        
         Vector2 position = transform.position;
         Vector2 size = GetComponent<BoxCollider2D>().size;
-
-        if (!building)
-            return;
         
-        Collider2D hit = Physics2D.OverlapBox(position, size, 0f);
-        if (hit != null && hit.CompareTag("Building") && hit.gameObject.GetComponentInParent<BuildingB>() != null)
+        Collider2D hit = Physics2D.OverlapBox(position, size, 0f, buildingMask);
+
+        if (hit != null && hit.GetComponentInParent<BuildingB>().CompareTag("Building") && hit.GetComponentInParent<BuildingB>() != null)
         {
             BuildingB output = hit.gameObject.GetComponentInParent<BuildingB>();
 

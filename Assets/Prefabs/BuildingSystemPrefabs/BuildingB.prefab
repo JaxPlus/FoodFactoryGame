@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 5475826379346529136}
   - component: {fileID: 5154464280287785808}
   - component: {fileID: 8698118971178581220}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: BuildingB
   m_TagString: Building
   m_Icon: {fileID: 0}
@@ -45,8 +45,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f562527ce8570174c904766aee64a9de, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BuildingB
-  ID: 0
+  buildingID: 0
+  buildingGuid: 
   inputInventory: []
+  maxCapacity: 0
+  output: {fileID: 0}
 --- !u!61 &8698118971178581220
 BoxCollider2D:
   m_ObjectHideFlags: 0

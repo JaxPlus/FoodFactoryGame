@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 3039774705119429835}
   - component: {fileID: 2219755313183651427}
   - component: {fileID: 3798405143670141767}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: OutputPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -151,3 +151,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: '::'
   building: {fileID: 0}
+  buildingMask:
+    serializedVersion: 2
+    m_Bits: 64

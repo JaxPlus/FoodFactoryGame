@@ -4,12 +4,11 @@ using UnityEngine;
 
 public class BuildingB : MonoBehaviour
 {
-    // TUTAJ TRZEBA BĘDZIE ZROBIĆ AUTOMATYZACJĘ
     public string Description => data.Description;
     public string Cost => data.Cost.ToString();
     public int buildingID;
     public string buildingGuid;
-    [SerializeField] public List<GameObject> inputInventory = new(0);
+    [SerializeField] public List<GameObject> inputInventory = new();
     [SerializeField] protected int maxCapacity;
     public BuildingB output;
     private BuildingModel model;
@@ -43,20 +42,9 @@ public class BuildingB : MonoBehaviour
         output = outputBuilding;
     }
 
-    public virtual void AddToInventory(GameObject item)
+    public virtual bool AddToInventory(GameObject item)
     {
-        for (int i = 0; i < inputInventory.Count; i++)
-        {
-            if (inputInventory[i] == null)
-            {
-                inputInventory[i] = item;
-            }
-            else
-            {
-                continue;
-            }
-        }
-
-        return;
+        inputInventory[0] = item;
+        return true;
     }
 }

@@ -6,18 +6,32 @@ using UnityEngine.UI;
 public class Belt : BuildingB
 {
     private List<SpriteRenderer> itemDisplay;
+    public float beltSpeed = 2f;
 
     void Start()
     {
-        InvokeRepeating(nameof(Transport), 0, 2f);
+        InvokeRepeating(nameof(Transport), beltSpeed, beltSpeed);
     }
 
     void Transport()
     {
-        if (output == null) return;
+        if (inputInventory[0] != null && inputInventory[1] == null)
+        {
+            inputInventory[1] = inputInventory[0];
+            inputInventory[0] = null;
+            itemDisplay[1].sprite = inputInventory[1].GetComponent<Image>().sprite;
+            itemDisplay[0].sprite = null;
+            return;
+        }
 
-        output.AddToInventory(inputInventory[0]);
-        inputInventory[0] = inputInventory[1];
+        if (output == null) return;
+        
+        if (inputInventory[1] != null)
+        {
+            if (!output.AddToInventory(inputInventory[1])) return;
+            inputInventory[1] = null;
+            itemDisplay[1].sprite = null;
+        }
     }
 
     public void SetItemDisplay(GameObject display)
@@ -36,21 +50,12 @@ public class Belt : BuildingB
         return itemDisplay != null && itemDisplay.Count > 0;
     }
 
-    public override void AddToInventory(GameObject item)
+    public override bool AddToInventory(GameObject item)
     {
-        for (int i = 0; i < inputInventory.Count; i++)
-        {
-            if (inputInventory[i] == null)
-            {
-                inputInventory[i] = item;
-                itemDisplay[i].sprite = item.GetComponent<Image>().sprite;
-            }
-            else
-            {
-                continue;
-            }
-        }
+        if (inputInventory[0] != null) return false;
 
-        return;
+        inputInventory[0] = item;
+        itemDisplay[0].sprite = item.GetComponent<Image>().sprite;
+        return true;
     }
 }

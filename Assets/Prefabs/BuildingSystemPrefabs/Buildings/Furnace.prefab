@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 5916164369774263231}
   - component: {fileID: 559715518011073067}
   - component: {fileID: 6836774445667529498}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Furnace
   m_TagString: Building
   m_Icon: {fileID: 0}
@@ -45,9 +45,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3ec863abafa0cc742a8e3e20b90d61e3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  ID: 0
+  buildingID: 0
+  buildingGuid: 
   inputInventory:
   - {fileID: 0}
+  maxCapacity: 0
+  output: {fileID: 0}
 --- !u!61 &6836774445667529498
 BoxCollider2D:
   m_ObjectHideFlags: 0

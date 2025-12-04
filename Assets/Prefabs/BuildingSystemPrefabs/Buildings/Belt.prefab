@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 8510158851676095215}
   - component: {fileID: 6363233304250769784}
   - component: {fileID: 4965347252348279524}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Belt
   m_TagString: Building
   m_Icon: {fileID: 0}
@@ -50,6 +50,7 @@ MonoBehaviour:
   inputInventory:
   - {fileID: 0}
   - {fileID: 0}
+  maxCapacity: 0
   output: {fileID: 0}
 --- !u!61 &4965347252348279524
 BoxCollider2D:
