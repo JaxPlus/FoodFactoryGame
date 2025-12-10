@@ -36,4 +36,15 @@ public class ItemDictionary : MonoBehaviour
 
         return prefab;
     }
+
+    public int GetItemID(string name)
+    {
+        foreach (Item item in itemPrefabs)
+        {
+            if (item.Name == name) 
+                return item.ID;
+        }
+
+        return -1;
+    }
 }

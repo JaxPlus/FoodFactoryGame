@@ -251,6 +251,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 55f16dda02fe2354e8201c6a03958690, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  ID: 0
-  Name: 
+  ID: 1
+  Name: TEST ITEM
   quantity: 1

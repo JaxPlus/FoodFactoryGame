@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1001 &3058148782895333037
+--- !u!1001 &490481081056259609
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -70,11 +70,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3324492749547244174, guid: f286f6a0f2f258944aa7d656b3684499, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 1.44623
+      value: -0.32649
       objectReference: {fileID: 0}
     - target: {fileID: 3324492749547244174, guid: f286f6a0f2f258944aa7d656b3684499, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0.21905
+      value: -0.37845
       objectReference: {fileID: 0}
     - target: {fileID: 3324492749547244174, guid: f286f6a0f2f258944aa7d656b3684499, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -90,24 +90,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5577630199201898491, guid: f286f6a0f2f258944aa7d656b3684499, type: 3}
       propertyPath: m_Name
-      value: ItemOreX Variant
-      objectReference: {fileID: 0}
-    - target: {fileID: 6881304343224174127, guid: f286f6a0f2f258944aa7d656b3684499, type: 3}
-      propertyPath: ID
-      value: 4
+      value: ItemFlour Variant
       objectReference: {fileID: 0}
     - target: {fileID: 6881304343224174127, guid: f286f6a0f2f258944aa7d656b3684499, type: 3}
       propertyPath: Name
-      value: OreX
+      value: Flour
       objectReference: {fileID: 0}
     - target: {fileID: 8160520717737717384, guid: f286f6a0f2f258944aa7d656b3684499, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 190274594, guid: f4c1745de5fb12249ba39926281c1861, type: 3}
-    - target: {fileID: 8160520717737717384, guid: f286f6a0f2f258944aa7d656b3684499, type: 3}
-      propertyPath: m_Maskable
-      value: 1
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 9132784678072903462, guid: af3cc114d20f54747a6ce8587370e074, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

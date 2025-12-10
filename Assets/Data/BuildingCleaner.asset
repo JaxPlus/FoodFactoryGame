@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5f9e87230f281174683e0bbb75533749, type: 3}
-  m_Name: Building 6
+  m_Name: BuildingCleaner
   m_EditorClassIdentifier: Assembly-CSharp::BuildingData
-  <Name>k__BackingField: Item Distributor.
-  <Description>k__BackingField: TEST BUILDING.
+  <Name>k__BackingField: Cleaner
+  <Description>k__BackingField: Washes ore clumps to make ores.
   <Cost>k__BackingField: []
-  <Model>k__BackingField: {fileID: 8549644607240097070, guid: 3a0ad16e2c7527843a677bfca0cf503a, type: 3}
-  <Prefab>k__BackingField: {fileID: 9020607744368229448, guid: 77fc1e93f749ffc4f888345b808e254b, type: 3}
+  <Model>k__BackingField: {fileID: 7691635486258164499, guid: 875b2adf94a45d54f8aeb1b4b8438e11, type: 3}
+  <Prefab>k__BackingField: {fileID: 0}

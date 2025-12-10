@@ -4856,23 +4856,21 @@ MonoBehaviour:
   m_GameObject: {fileID: 864010180}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 30649d3a9faa99c48a7b1166b86bf2a0, type: 3}
+  m_Script: {fileID: 11500000, guid: 8a8695521f0d02e499659fee002a26c2, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.HorizontalLayoutGroup
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.GridLayoutGroup
   m_Padding:
     m_Left: 20
     m_Right: 0
     m_Top: 20
     m_Bottom: 0
   m_ChildAlignment: 0
-  m_Spacing: 20
-  m_ChildForceExpandWidth: 0
-  m_ChildForceExpandHeight: 1
-  m_ChildControlWidth: 0
-  m_ChildControlHeight: 0
-  m_ChildScaleWidth: 0
-  m_ChildScaleHeight: 0
-  m_ReverseArrangement: 0
+  m_StartCorner: 0
+  m_StartAxis: 0
+  m_CellSize: {x: 100, y: 100}
+  m_Spacing: {x: 20, y: 20}
+  m_Constraint: 0
+  m_ConstraintCount: 2
 --- !u!1 &866575975
 GameObject:
   m_ObjectHideFlags: 0
@@ -5822,9 +5820,15 @@ MonoBehaviour:
   - {fileID: 6881304343224174127, guid: f286f6a0f2f258944aa7d656b3684499, type: 3}
   - {fileID: 9018618878977692048, guid: 4380f7398d60ecd4aa25b5a355e8068b, type: 3}
   - {fileID: 1426058325438690198, guid: 11efb696abfb5374eb15b18569b7ada9, type: 3}
-  - {fileID: 8435233078002989186, guid: 252d42f6cc9bb0b4ea04c3e0925f24b1, type: 3}
   - {fileID: 1770686419021318903, guid: 1b8ce5651a519034e9970568245410b7, type: 3}
+  - {fileID: 8435233078002989186, guid: 252d42f6cc9bb0b4ea04c3e0925f24b1, type: 3}
   - {fileID: 8504295114788977686, guid: 63f5db63ba80bcc4a99f9ee3a5964910, type: 3}
+  - {fileID: 1335731565644270936, guid: fd7dad57485128e45a8c71503f7fc4d5, type: 3}
+  - {fileID: 3399410855195319387, guid: 8b23c1d0a2bf3d54eace67065589b704, type: 3}
+  - {fileID: 5651711393220598177, guid: 76866f61a6d56ee48bad769fc37db87a, type: 3}
+  - {fileID: 6463162610498054198, guid: 7109a1a6648f0b74f836557b930e90ce, type: 3}
+  - {fileID: 2756304620337054855, guid: f7ba22de2d53e2045a45529d104f2fc5, type: 3}
+  - {fileID: 4377259893429056541, guid: 1223261f2215a9f46b31adb667b334fa, type: 3}
 --- !u!1 &1511180519
 GameObject:
   m_ObjectHideFlags: 0
@@ -6308,6 +6312,8 @@ MonoBehaviour:
   - {fileID: 6572464955082766123, guid: eb57597fe4e4ea845bf5e1b7de7edbaa, type: 3}
   - {fileID: 669271128302136267, guid: 7391eac4b44dc92419e7ccb5ea25c6ad, type: 3}
   - {fileID: 3395461114330538072, guid: b5a26877f27d6034db946a9a1dc9a471, type: 3}
+  - {fileID: 6160137721659619137, guid: 54ef2dbd2fc12fe4c9c26d97011b3d10, type: 3}
+  - {fileID: 2916422383996939671, guid: e6126511203c82f41bd68202e894794e, type: 3}
   - {fileID: 7273961396949670521, guid: 34347de8d63acc846ad80d68d30f661c, type: 3}
   - {fileID: 3335394916267832639, guid: c82e0033ece78cd4c8cf303f43ee9e4f, type: 3}
   - {fileID: 7314526391762562136, guid: 6d11a8484afd7d741a3111e2b3da3244, type: 3}
@@ -6318,6 +6324,8 @@ MonoBehaviour:
   - {fileID: 11400000, guid: a477910b250d74a41964da6d12236204, type: 2}
   - {fileID: 11400000, guid: b6dadab454a7a4c41bd3e9152a22dc23, type: 2}
   - {fileID: 11400000, guid: 38fda676ce85c24489ebbfd90c20be0d, type: 2}
+  - {fileID: 11400000, guid: af320dc37bda2344694ea9916a00a8ea, type: 2}
+  - {fileID: 11400000, guid: 70afe8632fa45d44789e932b0a1225e0, type: 2}
 --- !u!1 &1572825159
 GameObject:
   m_ObjectHideFlags: 0
@@ -6474,7 +6482,6 @@ MonoBehaviour:
   panels:
   - {fileID: 864010180}
   - {fileID: 2062505674}
-  slotCounts: 0300000003000000
 --- !u!114 &1646764312
 MonoBehaviour:
   m_ObjectHideFlags: 0

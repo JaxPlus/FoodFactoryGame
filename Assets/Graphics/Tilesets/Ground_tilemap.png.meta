@@ -283,7 +283,7 @@ TextureImporter:
         width: 32
         height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -292,6 +292,50 @@ TextureImporter:
       bones: []
       spriteID: a3e6035717a97754fa2ddbd5c2adc2d2
       internalID: -1461378639
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ground_tilemap_7
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 704
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 949a0dc8cfe7f2541b578de257c4c70e
+      internalID: 867841089
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ground_tilemap_8
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 704
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6873d403b77722e4d9c11ff6be55bfc0
+      internalID: 2029226199
       vertices: []
       indices: 
       edges: []
@@ -319,6 +363,8 @@ TextureImporter:
       Ground_tilemap_4: 3034453703259604802
       Ground_tilemap_5: -1461378639
       Ground_tilemap_6: 1919897357112302536
+      Ground_tilemap_7: 867841089
+      Ground_tilemap_8: 2029226199
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

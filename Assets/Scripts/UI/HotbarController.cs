@@ -1,9 +1,11 @@
+using System;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class HotbarController : MonoBehaviour
 {
     public GameObject[] panels;
-    public int[] slotCounts = {2, 1};
+    private Dictionary<BuildingCategory, int> slotCount = new();
     private int currentPanelActive = 0;
 
     private BuildingDictionary buildingDictionary;
@@ -15,32 +17,26 @@ public class HotbarController : MonoBehaviour
 
     void Start()
     {
+        slotCount.Add(BuildingCategory.Machines, 0);
+        slotCount.Add(BuildingCategory.Decoration, 0);
+
         ActivateHotbarPanel(0);
 
-        int currentBuilding = 0;
-        for (int i = 0; i < panels.Length; i++)
+        foreach (var building in buildingDictionary.buildingPrefabs)
         {
-            for (int j = 0; j < slotCounts[i]; j++)
-            {
-                //Slot slot = Instantiate(slotPrefab, panels[i].transform).GetComponent<Slot>();
-                
-                //GameObject building = Instantiate(buildingDictionary.GetComponent<BuildingDictionary>().buildingPrefabs[currentBuilding].gameObject, slot.transform);
-                //building.GetComponent<RectTransform>().anchoredPosition = Vector2.zero;
-                //slot.currentItem = building;
+            slotCount[building.Category] += 1;
+        }
+
+        int currentBuilding = 0;
+        int i = 0;
+        foreach (var slot in slotCount)
+        {
+            for (int j = 0; j < slot.Value; j++)
+            { 
                 Instantiate(buildingDictionary.GetComponent<BuildingDictionary>().buildingPrefabs[currentBuilding].gameObject, panels[i].transform);
                 currentBuilding++;
             }
-        }
-    }
-
-    void StartBuildingWith(int index)
-    {
-        Slot slot = panels[currentPanelActive].transform.GetChild(index).GetComponent<Slot>();
-
-        if (slot.currentItem != null)
-        {
-            Building building = slot.currentItem.GetComponent<Building>();
-            // start building
+            i++;
         }
     }
 

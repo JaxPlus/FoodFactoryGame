@@ -96,10 +96,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: BuildingModelFurnace Variant
       objectReference: {fileID: 0}
-    - target: {fileID: 8182590913111462371, guid: 4438b5e398bb33c4faba91f0e4c74aca, type: 3}
-      propertyPath: isRotatable
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects:
     - {fileID: 223214569631543661, guid: 4438b5e398bb33c4faba91f0e4c74aca, type: 3}

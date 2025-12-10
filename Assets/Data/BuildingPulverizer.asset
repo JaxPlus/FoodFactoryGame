@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5f9e87230f281174683e0bbb75533749, type: 3}
-  m_Name: Building 1
+  m_Name: BuildingPulverizer
   m_EditorClassIdentifier: Assembly-CSharp::BuildingData
-  <Name>k__BackingField: Belt
-  <Description>k__BackingField: Transport belt for transforming items.
+  <Name>k__BackingField: Pulverizer
+  <Description>k__BackingField: Processes raw ore into clumps.
   <Cost>k__BackingField: []
-  <Model>k__BackingField: {fileID: 8182590913111462371, guid: 4438b5e398bb33c4faba91f0e4c74aca, type: 3}
-  <Prefab>k__BackingField: {fileID: 6363233304250769784, guid: 193843d505bb99c45a2d7b1087864412, type: 3}
+  <Model>k__BackingField: {fileID: 560846151669008071, guid: 5932ba54f3641694a8c5b34fe24db27a, type: 3}
+  <Prefab>k__BackingField: {fileID: 6291055686146781669, guid: 3cd171238a6a441469af05de835412ee, type: 3}

@@ -44,6 +44,8 @@ public class BuildingB : MonoBehaviour
 
     public virtual bool AddToInventory(GameObject item)
     {
+        if (inputInventory[0] != null) return false;
+
         inputInventory[0] = item;
         return true;
     }

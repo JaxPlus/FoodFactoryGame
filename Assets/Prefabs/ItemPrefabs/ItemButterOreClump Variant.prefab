@@ -1,0 +1,107 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &8093654617532717684
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 3324492749547244174, guid: f286f6a0f2f258944aa7d656b3684499, type: 3}
+      propertyPath: m_Pivot.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3324492749547244174, guid: f286f6a0f2f258944aa7d656b3684499, type: 3}
+      propertyPath: m_Pivot.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3324492749547244174, guid: f286f6a0f2f258944aa7d656b3684499, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3324492749547244174, guid: f286f6a0f2f258944aa7d656b3684499, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3324492749547244174, guid: f286f6a0f2f258944aa7d656b3684499, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3324492749547244174, guid: f286f6a0f2f258944aa7d656b3684499, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3324492749547244174, guid: f286f6a0f2f258944aa7d656b3684499, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 3324492749547244174, guid: f286f6a0f2f258944aa7d656b3684499, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 3324492749547244174, guid: f286f6a0f2f258944aa7d656b3684499, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3324492749547244174, guid: f286f6a0f2f258944aa7d656b3684499, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3324492749547244174, guid: f286f6a0f2f258944aa7d656b3684499, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3324492749547244174, guid: f286f6a0f2f258944aa7d656b3684499, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3324492749547244174, guid: f286f6a0f2f258944aa7d656b3684499, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3324492749547244174, guid: f286f6a0f2f258944aa7d656b3684499, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3324492749547244174, guid: f286f6a0f2f258944aa7d656b3684499, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3324492749547244174, guid: f286f6a0f2f258944aa7d656b3684499, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0.06106
+      objectReference: {fileID: 0}
+    - target: {fileID: 3324492749547244174, guid: f286f6a0f2f258944aa7d656b3684499, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0.22652
+      objectReference: {fileID: 0}
+    - target: {fileID: 3324492749547244174, guid: f286f6a0f2f258944aa7d656b3684499, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3324492749547244174, guid: f286f6a0f2f258944aa7d656b3684499, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3324492749547244174, guid: f286f6a0f2f258944aa7d656b3684499, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5577630199201898491, guid: f286f6a0f2f258944aa7d656b3684499, type: 3}
+      propertyPath: m_Name
+      value: ItemButterOreClump Variant
+      objectReference: {fileID: 0}
+    - target: {fileID: 6881304343224174127, guid: f286f6a0f2f258944aa7d656b3684499, type: 3}
+      propertyPath: Name
+      value: Butter Ore Clump
+      objectReference: {fileID: 0}
+    - target: {fileID: 8160520717737717384, guid: f286f6a0f2f258944aa7d656b3684499, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 1704695629783951263, guid: 550c545dfa334b842a640e3f4af614e5, type: 3}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: f286f6a0f2f258944aa7d656b3684499, type: 3}

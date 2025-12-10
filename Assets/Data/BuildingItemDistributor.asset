@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5f9e87230f281174683e0bbb75533749, type: 3}
-  m_Name: Building 1
+  m_Name: BuildingItemDistributor
   m_EditorClassIdentifier: Assembly-CSharp::BuildingData
-  <Name>k__BackingField: Belt
-  <Description>k__BackingField: Transport belt for transforming items.
+  <Name>k__BackingField: Item Distributor.
+  <Description>k__BackingField: TEST BUILDING.
   <Cost>k__BackingField: []
-  <Model>k__BackingField: {fileID: 8182590913111462371, guid: 4438b5e398bb33c4faba91f0e4c74aca, type: 3}
-  <Prefab>k__BackingField: {fileID: 6363233304250769784, guid: 193843d505bb99c45a2d7b1087864412, type: 3}
+  <Model>k__BackingField: {fileID: 8549644607240097070, guid: 3a0ad16e2c7527843a677bfca0cf503a, type: 3}
+  <Prefab>k__BackingField: {fileID: 9020607744368229448, guid: 77fc1e93f749ffc4f888345b808e254b, type: 3}

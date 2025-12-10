@@ -53,7 +53,6 @@ public class DemolishingSystem : MonoBehaviour
                 }
                 for (int i = 0; i < returnItems.Count; i++)
                 {
-                    Debug.Log(returnItems[i].name);
                     InventoryController.Instance.AddItem(returnItems[i]);
                 }
 

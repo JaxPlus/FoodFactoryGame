@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1001 &5183062894436486360
+--- !u!1001 &5617735993604574071
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -70,11 +70,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3324492749547244174, guid: f286f6a0f2f258944aa7d656b3684499, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 14.42457
+      value: 0.06106
       objectReference: {fileID: 0}
     - target: {fileID: 3324492749547244174, guid: f286f6a0f2f258944aa7d656b3684499, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -6.0971
+      value: 0.22652
       objectReference: {fileID: 0}
     - target: {fileID: 3324492749547244174, guid: f286f6a0f2f258944aa7d656b3684499, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -90,20 +90,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5577630199201898491, guid: f286f6a0f2f258944aa7d656b3684499, type: 3}
       propertyPath: m_Name
-      value: ItemOreY Variant
-      objectReference: {fileID: 0}
-    - target: {fileID: 6881304343224174127, guid: f286f6a0f2f258944aa7d656b3684499, type: 3}
-      propertyPath: ID
-      value: 5
+      value: ItemFlourOreClump Variant
       objectReference: {fileID: 0}
     - target: {fileID: 6881304343224174127, guid: f286f6a0f2f258944aa7d656b3684499, type: 3}
       propertyPath: Name
-      value: OreY
+      value: Flour Ore Clump
       objectReference: {fileID: 0}
     - target: {fileID: 8160520717737717384, guid: f286f6a0f2f258944aa7d656b3684499, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 1560912926, guid: f4c1745de5fb12249ba39926281c1861, type: 3}
+      objectReference: {fileID: -8464252687741215543, guid: 2b7b1fb1f4367f944b01a49cb4c5da7f, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
