@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5f9e87230f281174683e0bbb75533749, type: 3}
-  m_Name: BuildingCleaner
+  m_Name: BuildingSenderChest
   m_EditorClassIdentifier: Assembly-CSharp::BuildingData
-  <Name>k__BackingField: Cleaner
-  <Description>k__BackingField: Washes ore clumps to make ores.
+  <Name>k__BackingField: Sender Chest
+  <Description>k__BackingField: Sends the requested items for quests.
   <Cost>k__BackingField: []
-  <Model>k__BackingField: {fileID: 7691635486258164499, guid: 875b2adf94a45d54f8aeb1b4b8438e11, type: 3}
-  <Prefab>k__BackingField: {fileID: 1373803083396126285, guid: 2ebaeee6245c3d6448c8f6cc173ffa54, type: 3}
+  <Model>k__BackingField: {fileID: 6881743608925898195, guid: 2009ae21d9fab8943bc0208e3505456c, type: 3}
+  <Prefab>k__BackingField: {fileID: 488897231136874627, guid: f3f55b0120c5f4742a3b47f72bcdf7be, type: 3}
