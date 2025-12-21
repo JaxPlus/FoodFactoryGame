@@ -32,7 +32,7 @@ public class QuestObjective
     public bool IsCompleted => currentAmount >= reqiredAmount;
 }
 
-// Mo¿e siê przyda lecz nie wiem
+// Mo?e si? przyda lecz nie wiem
 //public enum ObjectiveType
 //{
 //      Collectable, Item, Talk
@@ -56,7 +56,7 @@ public class QuestProgress
                 objectiveID = obj.objectiveID,
                 description = obj.description,
                 reqiredAmount = obj.reqiredAmount,
-                currentAmount = obj.currentAmount
+                currentAmount = 0
             });
         }
     }

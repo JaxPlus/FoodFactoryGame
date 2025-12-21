@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 473581b2ae793b84b9bd590b809e952c, type: 3}
   m_Name: CollectFlourOre
   m_EditorClassIdentifier: Assembly-CSharp::Quest
-  questID: C319be4b1-db36-4283-bc03-4cd9256a705a
+  questID: Flour Ore2d1e30db-6d78-44ad-9d4c-af010df34069
   questName: Flour Ore
   description: Collect 5 Flour Ore
   objectives:
