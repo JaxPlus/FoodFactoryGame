@@ -24,6 +24,8 @@ public class SaveController : MonoBehaviour
             playerPosition = GameObject.FindGameObjectWithTag("Player").transform.position,
             inventorySaveData = inventoryController.GetInventorySaveItems(),
             buildingGridData = buildingGrid.GetBuildingGridCells(),
+            questProgressData = QuestController.Instance.activeQuests,
+            handingQuestIDs = QuestController.Instance.handingQuestIDs,
         };
 
         File.WriteAllText(saveLocation, JsonUtility.ToJson(saveData));
@@ -32,7 +34,7 @@ public class SaveController : MonoBehaviour
     public void SaveAndExit()
     {
         SaveGame();
-        // @TODO Zamieniæ na zmianê sceny na menu jak ju¿ je mo¿e kiedyœ bêdê mia³
+        // @TODO Zamieniï¿½ na zmianï¿½ sceny na menu jak juï¿½ je moï¿½e kiedyï¿½ bï¿½dï¿½ miaï¿½
         Application.Quit();
     }
 
@@ -47,10 +49,15 @@ public class SaveController : MonoBehaviour
 
             inventoryController.SetInventoryData(saveData.inventorySaveData);
             buildingGrid.SetBuildingGridCells(saveData.buildingGridData);
+            
+            QuestController.Instance.LoadQuestProgress(saveData.questProgressData);
+            QuestController.Instance.handingQuestIDs = saveData.handingQuestIDs;
         }
         else
         {
             SaveGame();
+            
+            inventoryController.SetInventoryData(new List<InventorySaveData>());
         }
     }
 }

@@ -8,4 +8,6 @@ public class SaveData
     public Vector3 playerPosition;
     public List<InventorySaveData> inventorySaveData;
     public List<BuildingGridCellData> buildingGridData;
+    public List<QuestProgress> questProgressData;
+    public List<string> handingQuestIDs;
 }
