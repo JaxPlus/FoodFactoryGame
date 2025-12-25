@@ -9,7 +9,9 @@ public class Quest : ScriptableObject
     public string questID;
     public string questName;
     public string description;
+    public bool isUnlocked = false;
     public List<QuestObjective> objectives;
+    public List<QuestReward> questRewards;
 
     private void OnValidate()
     {
@@ -63,3 +65,13 @@ public class QuestProgress
     public bool IsCompleted => objectives.TrueForAll(o => o.IsCompleted);
     public string QuestID => quest.questID;
 }
+
+[System.Serializable]
+public class QuestReward
+{
+    public RewardType type;
+    public int rewardID;
+    public int amount = 1;
+}
+
+public enum RewardType { Item, Building, NextQuest, Reputation, Custom }

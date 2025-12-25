@@ -11,20 +11,13 @@ public class QuestUI : MonoBehaviour
     public GameObject objectiveTextPrefab;
     public GameObject objectiveList;
     public GameObject requestTitle;
-
-    public Quest testQuest;
-    public int testQuestAmount;
-    private List<QuestProgress> testQuests = new();
+    public GameObject completeQuestBtn;
+    public GameObject rewardsText;
     
     void Start()
     {
-        for (int i = 0; i < testQuestAmount; i++)
-        {
-            testQuests.Add(new QuestProgress(testQuest));
-        }
-        
         UpdateQuestUI();
-        ShowQuestDetails(testQuests[0]);
+        ShowQuestDetails(QuestController.Instance.activeQuests[0]);
     }
 
     public void UpdateQuestUI()
@@ -47,18 +40,25 @@ public class QuestUI : MonoBehaviour
 
     public void ShowQuestDetails(QuestProgress quest)
     {
-        requestTitle.GetComponent<TMP_Text>().text = quest.quest.questName;
-        
         foreach (Transform child in objectiveList.transform)
         {
             Destroy(child.gameObject);
         }
+        
+        requestTitle.GetComponent<TMP_Text>().text = quest.quest.questName;
+        completeQuestBtn.GetComponent<Button>().onClick.AddListener(() => QuestController.Instance.HandingInQuest(quest.QuestID));
         
         foreach (var objective in quest.objectives)
         {
             GameObject objTextGO = Instantiate(objectiveTextPrefab, objectiveList.transform);
             TMP_Text objText = objTextGO.GetComponent<TMP_Text>();
             objText.text = $"{objective.description} ({objective.currentAmount}/{objective.reqiredAmount})";
+        }
+
+        rewardsText.GetComponent<TMP_Text>().text = "Rewards: ";
+        foreach (var rewards in quest.quest.questRewards)
+        {
+            rewardsText.GetComponent<TMP_Text>().text += rewards.type;
         }
     }
 }

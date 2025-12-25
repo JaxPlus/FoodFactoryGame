@@ -1,10 +1,11 @@
+using System;
 using System.Collections.Generic;
-using Unity.Mathematics.Geometry;
 using UnityEngine;
 
 public class QuestController : MonoBehaviour
 {
     public static QuestController Instance { get; private set; }
+    public List<Quest> allQuests = new();
     public List<QuestProgress> activeQuests = new();
     private QuestUI questUI;
     
@@ -23,6 +24,17 @@ public class QuestController : MonoBehaviour
 
         questUI = FindFirstObjectByType<QuestUI>();
         InventoryController.Instance.OnInventoryChanged += CheckInventoryForQuests;
+    }
+
+    private void Start()
+    {
+        foreach (Quest quest in allQuests)
+        {
+            if (quest.isUnlocked)
+            {
+                AcceptQuest(quest);
+            }
+        }
     }
 
     public void AcceptQuest(Quest quest)
@@ -68,8 +80,8 @@ public class QuestController : MonoBehaviour
 
     public void HandingInQuest(string questID)
     {
+        Debug.Log("handing in quest " + questID);
         if (!RemoveRequiredItemsFromInventory(questID)) return;
-        
         
         QuestProgress quest = activeQuests.Find(q => q.QuestID == questID);
 
@@ -77,6 +89,7 @@ public class QuestController : MonoBehaviour
         {
             handingQuestIDs.Add(questID);
             activeQuests.Remove(quest);
+            RewardController.Instance.GiveQuestReward(quest.quest);
             questUI.UpdateQuestUI();
         }
     }
