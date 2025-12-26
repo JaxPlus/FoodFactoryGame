@@ -80,7 +80,6 @@ public class QuestController : MonoBehaviour
 
     public void HandingInQuest(string questID)
     {
-        Debug.Log("handing in quest " + questID);
         if (!RemoveRequiredItemsFromInventory(questID)) return;
         
         QuestProgress quest = activeQuests.Find(q => q.QuestID == questID);
@@ -109,7 +108,7 @@ public class QuestController : MonoBehaviour
 
         foreach (QuestObjective questObjective in quest.objectives)
         {
-            // questObjective.type == ObjectiveType.CollectItem &&
+            // if questObjective.type == ObjectiveType.CollectItem &&
             if (int.TryParse(questObjective.objectiveID, out int itemID))
             {
                 requiredItems[itemID] = questObjective.reqiredAmount;

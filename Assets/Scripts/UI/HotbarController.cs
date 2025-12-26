@@ -26,14 +26,57 @@ public class HotbarController : MonoBehaviour
         {
             slotCount[building.Category] += 1;
         }
+        
+        foreach (var panel in panels)
+        {
+            foreach (Transform child in panel.transform)
+            {
+                Destroy(child.gameObject);
+            }
+        }
+
+        int currentBuilding = 1;
+        int i = 0;
+        foreach (var slot in slotCount)
+        {
+            for (int j = 0; j < slot.Value; j++)
+            {
+                Building currentBuild = buildingDictionary.GetBuildingPrefab(currentBuilding).GetComponent<Building>();
+                
+                if (currentBuild.IsUnlocked())
+                {
+                    Instantiate(currentBuild.gameObject, panels[i].transform);
+                }
+                
+                currentBuilding++;
+            }
+            i++;
+        }
+    }
+
+    public void RefreshHotbarPanel()
+    {
+        foreach (var panel in panels)
+        {
+            foreach (Transform child in panel.transform)
+            {
+                Destroy(child.gameObject);
+            }
+        }
 
         int currentBuilding = 0;
         int i = 0;
         foreach (var slot in slotCount)
         {
             for (int j = 0; j < slot.Value; j++)
-            { 
-                Instantiate(buildingDictionary.GetComponent<BuildingDictionary>().buildingPrefabs[currentBuilding].gameObject, panels[i].transform);
+            {
+                Building currentBuild = buildingDictionary.buildingPrefabs[currentBuilding];
+                
+                if (currentBuild.IsUnlocked())
+                {
+                    Instantiate(currentBuild.gameObject, panels[i].transform);
+                }
+                
                 currentBuilding++;
             }
             i++;

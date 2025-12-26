@@ -13,11 +13,11 @@ public class QuestUI : MonoBehaviour
     public GameObject requestTitle;
     public GameObject completeQuestBtn;
     public GameObject rewardsText;
+    public GameObject questDetails;
     
     void Start()
     {
         UpdateQuestUI();
-        ShowQuestDetails(QuestController.Instance.activeQuests[0]);
     }
 
     public void UpdateQuestUI()
@@ -45,8 +45,11 @@ public class QuestUI : MonoBehaviour
             Destroy(child.gameObject);
         }
         
+        completeQuestBtn.SetActive(true);
+        
         requestTitle.GetComponent<TMP_Text>().text = quest.quest.questName;
         completeQuestBtn.GetComponent<Button>().onClick.AddListener(() => QuestController.Instance.HandingInQuest(quest.QuestID));
+        questDetails.GetComponent<TMP_Text>().text = quest.quest.description;
         
         foreach (var objective in quest.objectives)
         {
@@ -60,5 +63,18 @@ public class QuestUI : MonoBehaviour
         {
             rewardsText.GetComponent<TMP_Text>().text += rewards.type;
         }
+    }
+
+    public void HideQuestDetails()
+    {
+        foreach (Transform child in objectiveList.transform)
+        {
+            Destroy(child.gameObject);
+        }
+        
+        completeQuestBtn.SetActive(false);
+        requestTitle.GetComponent<TMP_Text>().text = "";
+        rewardsText.GetComponent<TMP_Text>().text = "";
+        questDetails.GetComponent<TMP_Text>().text = "";
     }
 }

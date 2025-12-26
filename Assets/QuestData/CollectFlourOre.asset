@@ -14,7 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Quest
   questID: Flour Ore2d1e30db-6d78-44ad-9d4c-af010df34069
   questName: Flour Ore
-  description: Collect 5 Flour Ore
+  description: You were sent here to gather food for our dying community. So don't
+    slack around and send us food.
   isUnlocked: 1
   objectives:
   - objectiveID: 3
@@ -23,5 +24,8 @@ MonoBehaviour:
     currentAmount: 0
   questRewards:
   - type: 1
+    rewardID: 7
+    amount: 0
+  - type: 2
     rewardID: 0
     amount: 0

@@ -1,7 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
-using UnityEngine.InputSystem;
 
 public class Building : MonoBehaviour, IPointerClickHandler
 {
@@ -11,7 +10,8 @@ public class Building : MonoBehaviour, IPointerClickHandler
     public BuildingData buildingData;
     private Dictionary<int, int> ingredientsDict;
     private int ingredientsCount;
-
+    public bool isUnlocked { get; private set; }
+    
     public void OnPointerClick(PointerEventData eventData)
     {
         if (eventData.button != PointerEventData.InputButton.Left) return;
@@ -29,5 +29,15 @@ public class Building : MonoBehaviour, IPointerClickHandler
         {
             BuildingSystem.Instance.StopPreview();
         }
+    }
+
+    public void UnlockBuilding()
+    {
+        isUnlocked = true;
+    }
+
+    public bool IsUnlocked()
+    {
+        return isUnlocked;
     }
 }

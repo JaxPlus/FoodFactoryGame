@@ -3,6 +3,7 @@ using UnityEngine;
 
 public class RewardController : MonoBehaviour
 {
+    public GameObject hotbar;
     public static RewardController Instance { get; private set; }
 
     private void Awake()
@@ -25,6 +26,7 @@ public class RewardController : MonoBehaviour
                     break;
                 case RewardType.Building:
                     // Unlock next Building
+                    GiveBuildingReward(reward.rewardID);
                     break;
                 case RewardType.NextQuest:
                     // Unlock next quest
@@ -48,5 +50,15 @@ public class RewardController : MonoBehaviour
         {
             InventoryController.Instance.AddItem(itemPrefab);
         }
+    }
+
+    public void GiveBuildingReward(int buildingID)
+    {
+        var buildingPrefab = FindFirstObjectByType<BuildingDictionary>()?.GetBuildingPrefab(buildingID);
+        
+        if (buildingPrefab == null) return;
+        
+        buildingPrefab.GetComponent<Building>().UnlockBuilding();
+        hotbar.GetComponent<HotbarController>().RefreshHotbarPanel();
     }
 }
