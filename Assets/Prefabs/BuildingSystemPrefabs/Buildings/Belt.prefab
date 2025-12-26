@@ -52,6 +52,10 @@ MonoBehaviour:
   - {fileID: 0}
   maxCapacity: 0
   output: {fileID: 0}
+  beltSpeed: 2
+  playerMask:
+    serializedVersion: 2
+    m_Bits: 512
 --- !u!61 &4965347252348279524
 BoxCollider2D:
   m_ObjectHideFlags: 0

@@ -1,0 +1,39 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 473581b2ae793b84b9bd590b809e952c, type: 3}
+  m_Name: Automate
+  m_EditorClassIdentifier: Assembly-CSharp::Quest
+  questID: First Automation22939434-2f77-4a37-8c0f-178a89cc98b7
+  questName: First Automation
+  description: With the ores that you found and the building that we gave you, you
+    need to automate the production to keep up with the demand.
+  isUnlocked: 0
+  objectives:
+  - objectiveID: 7
+    description: Collect 10 Flour Ore Clumps
+    reqiredAmount: 10
+    currentAmount: 0
+  - objectiveID: 8
+    description: Collect 10 Butter Ore Clumps
+    reqiredAmount: 10
+    currentAmount: 0
+  - objectiveID: 9
+    description: Collect 10 Salt Ore Clumps
+    reqiredAmount: 10
+    currentAmount: 0
+  questRewards:
+  - type: 1
+    rewardID: 5
+    amount: 0
+  - type: 2
+    rewardID: All The Tools9b6d21a6-f2ae-4be7-8659-995c75b45c08
+    amount: 0

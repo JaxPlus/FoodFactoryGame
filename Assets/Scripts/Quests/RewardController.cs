@@ -22,14 +22,15 @@ public class RewardController : MonoBehaviour
             {
                 case RewardType.Item:
                     // Item reward
-                    GiveItemReward(reward.rewardID, reward.amount);
+                    GiveItemReward(int.Parse(reward.rewardID), reward.amount);
                     break;
                 case RewardType.Building:
                     // Unlock next Building
-                    GiveBuildingReward(reward.rewardID);
+                    GiveBuildingReward(int.Parse(reward.rewardID));
                     break;
                 case RewardType.NextQuest:
                     // Unlock next quest
+                    GiveNextQuestReward(reward.rewardID);
                     break;
                 case RewardType.Reputation:
                     // Type for future reputation system if I will do it
@@ -60,5 +61,11 @@ public class RewardController : MonoBehaviour
         
         buildingPrefab.GetComponent<Building>().UnlockBuilding();
         hotbar.GetComponent<HotbarController>().RefreshHotbarPanel();
+    }
+
+    public void GiveNextQuestReward(string questID)
+    {
+        Quest quest = QuestController.Instance.allQuests.Find(q => q.questID == questID);
+        QuestController.Instance.AcceptQuest(quest);
     }
 }

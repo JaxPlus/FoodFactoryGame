@@ -10,7 +10,7 @@ public class Building : MonoBehaviour, IPointerClickHandler
     public BuildingData buildingData;
     private Dictionary<int, int> ingredientsDict;
     private int ingredientsCount;
-    public bool isUnlocked { get; private set; }
+    public bool isUnlocked;
     
     public void OnPointerClick(PointerEventData eventData)
     {

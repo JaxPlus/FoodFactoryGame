@@ -10,25 +10,26 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 473581b2ae793b84b9bd590b809e952c, type: 3}
-  m_Name: CollectFlourOre
+  m_Name: CollectOtherOres
   m_EditorClassIdentifier: Assembly-CSharp::Quest
-  questID: Flour Ore2d1e30db-6d78-44ad-9d4c-af010df34069
-  questName: Fundamentals
-  description: You were sent here to gather food for our dying community. So don't
-    slack around and send us food.
-  isUnlocked: 1
+  questID: First Ores8b324460-b7ef-4451-bdfa-1664ec8a03aa
+  questName: First Ores
+  description: Great, now our precious robot you need to find other common ores on
+    this weird planet.
+  isUnlocked: 0
   objectives:
-  - objectiveID: 3
-    description: Collect 5 Flour Ore
-    reqiredAmount: 5
+  - objectiveID: 4
+    description: Collect 10 Butter Ore
+    reqiredAmount: 10
+    currentAmount: 0
+  - objectiveID: 5
+    description: Collect 10 Salt Ore
+    reqiredAmount: 10
     currentAmount: 0
   questRewards:
   - type: 1
-    rewardID: 7
-    amount: 0
-  - type: 1
-    rewardID: 1
+    rewardID: 4
     amount: 0
   - type: 2
-    rewardID: First Ores8b324460-b7ef-4451-bdfa-1664ec8a03aa
+    rewardID: First Automation22939434-2f77-4a37-8c0f-178a89cc98b7
     amount: 0

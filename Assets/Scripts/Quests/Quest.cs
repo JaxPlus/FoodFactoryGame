@@ -9,7 +9,7 @@ public class Quest : ScriptableObject
     public string questID;
     public string questName;
     public string description;
-    public bool isUnlocked = false;
+    public bool isUnlocked;
     public List<QuestObjective> objectives;
     public List<QuestReward> questRewards;
 
@@ -25,7 +25,7 @@ public class Quest : ScriptableObject
 [System.Serializable]
 public class QuestObjective
 {
-    public string objectiveID; // musi byæ takie same jak to co chcemy zdobyæ np. przedmiot jakiœ
+    public string objectiveID; // musi by? takie same jak to co chcemy zdoby? np. przedmiot jaki?
     public string description;
     //public ObjectiveType type;
     public int reqiredAmount;
@@ -70,7 +70,7 @@ public class QuestProgress
 public class QuestReward
 {
     public RewardType type;
-    public int rewardID;
+    public string rewardID;
     public int amount = 1;
 }
 

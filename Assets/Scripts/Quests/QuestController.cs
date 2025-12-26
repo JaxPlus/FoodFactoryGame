@@ -90,6 +90,7 @@ public class QuestController : MonoBehaviour
             activeQuests.Remove(quest);
             RewardController.Instance.GiveQuestReward(quest.quest);
             questUI.UpdateQuestUI();
+            questUI.HideQuestDetails();
         }
     }
 

@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 473581b2ae793b84b9bd590b809e952c, type: 3}
+  m_Name: SweetEngenniring
+  m_EditorClassIdentifier: Assembly-CSharp::Quest
+  questID: Sweet Engineeringb0d4339b-a746-499f-936f-36c34c7460cf
+  questName: Sweet Engineering
+  description: Now you can send all the food to us using Sender Chest. From now on
+    you need to choose which fraction to support
+  isUnlocked: 0
+  objectives:
+  - objectiveID: 
+    description: Craft first food.
+    reqiredAmount: 10
+    currentAmount: 0
+  questRewards: []

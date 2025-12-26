@@ -1,4 +1,3 @@
-using NUnit.Framework;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -7,10 +6,35 @@ public class Belt : BuildingB
 {
     private List<SpriteRenderer> itemDisplay;
     public float beltSpeed = 2f;
+    public LayerMask playerMask;
 
     void Start()
     {
         InvokeRepeating(nameof(Transport), beltSpeed, beltSpeed);
+    }
+
+    private void Update()
+    {
+        Vector2 position = transform.position;
+        Vector2 size = GetComponent<BoxCollider2D>().size;
+        
+        Collider2D hit = Physics2D.OverlapBox(position, size, 0f, playerMask);
+
+        if (hit != null)
+        {
+            if (Input.GetKeyDown(KeyCode.F))
+            {
+                for (int i = 0; i < inputInventory.Count; i++)
+                {
+                    if (inputInventory[i] != null)
+                    {
+                        InventoryController.Instance.AddItem(inputInventory[i]);
+                        inputInventory[i] = null;
+                        itemDisplay[i].sprite = null;
+                    }
+                }
+            }
+        }
     }
 
     void Transport()

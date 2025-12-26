@@ -61,7 +61,7 @@ public class QuestUI : MonoBehaviour
         rewardsText.GetComponent<TMP_Text>().text = "Rewards: ";
         foreach (var rewards in quest.quest.questRewards)
         {
-            rewardsText.GetComponent<TMP_Text>().text += rewards.type;
+            rewardsText.GetComponent<TMP_Text>().text += rewards.type + "\n";
         }
     }
 
