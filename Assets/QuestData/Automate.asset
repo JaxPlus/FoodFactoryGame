@@ -15,7 +15,8 @@ MonoBehaviour:
   questID: First Automation22939434-2f77-4a37-8c0f-178a89cc98b7
   questName: First Automation
   description: With the ores that you found and the building that we gave you, you
-    need to automate the production to keep up with the demand.
+    need to automate the production to keep up with the demand. Click (B) to enter
+    Disassemble mode then (Left Click) to disassemble.
   isUnlocked: 0
   objectives:
   - objectiveID: 7

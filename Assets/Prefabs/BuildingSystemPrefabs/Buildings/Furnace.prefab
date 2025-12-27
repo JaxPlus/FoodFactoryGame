@@ -49,8 +49,11 @@ MonoBehaviour:
   buildingGuid: 
   inputInventory:
   - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   maxCapacity: 0
   output: {fileID: 0}
+  bakingSpeed: 4
 --- !u!61 &6836774445667529498
 BoxCollider2D:
   m_ObjectHideFlags: 0

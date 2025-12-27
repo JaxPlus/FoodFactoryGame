@@ -33,6 +33,9 @@ MonoBehaviour:
   - type: 1
     rewardID: 6
     amount: 0
+  - type: 1
+    rewardID: 2
+    amount: 0
   - type: 2
     rewardID: Sweet Engineeringb0d4339b-a746-499f-936f-36c34c7460cf
     amount: 0

@@ -19,7 +19,7 @@ MonoBehaviour:
   isUnlocked: 1
   objectives:
   - objectiveID: 3
-    description: Collect 5 Flour Ore
+    description: Mine (Right Click) 5 Flour Ore
     reqiredAmount: 5
     currentAmount: 0
   questRewards:

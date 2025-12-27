@@ -18,8 +18,17 @@ MonoBehaviour:
     you need to choose which fraction to support
   isUnlocked: 0
   objectives:
-  - objectiveID: 
-    description: Craft first food.
+  - objectiveID: 2
+    description: Craft first cake.
     reqiredAmount: 10
     currentAmount: 0
-  questRewards: []
+  questRewards:
+  - type: 1
+    rewardID: 8
+    amount: 0
+  - type: 1
+    rewardID: 9
+    amount: 0
+  - type: 1
+    rewardID: 10
+    amount: 0

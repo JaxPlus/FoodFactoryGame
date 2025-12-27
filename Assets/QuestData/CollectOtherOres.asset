@@ -19,11 +19,11 @@ MonoBehaviour:
   isUnlocked: 0
   objectives:
   - objectiveID: 4
-    description: Collect 10 Butter Ore
+    description: Collect (Press F when on a Belt) 10 Butter Ore
     reqiredAmount: 10
     currentAmount: 0
   - objectiveID: 5
-    description: Collect 10 Salt Ore
+    description: Collect (Press F when on a Belt) 10 Salt Ore
     reqiredAmount: 10
     currentAmount: 0
   questRewards:

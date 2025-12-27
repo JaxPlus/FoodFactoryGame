@@ -11,7 +11,7 @@ public class BuildingB : MonoBehaviour
     [SerializeField] public List<GameObject> inputInventory = new();
     [SerializeField] protected int maxCapacity;
     public BuildingB output;
-    private BuildingModel model;
+    protected BuildingModel model;
     private BuildingData data;
 
     public void Setup(BuildingData data, float rotation, int ID)

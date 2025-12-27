@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.Tilemaps;
 using UnityEngine.UIElements;
@@ -11,6 +12,9 @@ public class Miner : BuildingB
 
     void Start()
     {
+        gameObject.transform.Rotate(new Vector3(0, 0, model.Rotation));
+        model.transform.Find("Wrapper").SetPositionAndRotation(transform.position, new Quaternion(0, 0, 0, 0));
+        
         inventoryController = InventoryController.Instance;
 
         InvokeRepeating(nameof(Mine), 0, miningSpeed);
