@@ -14,6 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::BuildingData
   <Name>k__BackingField: Sender Chest
   <Description>k__BackingField: Sends the requested items for quests.
-  <Cost>k__BackingField: []
+  <Cost>k__BackingField:
+  - {fileID: 7214106429408896450, guid: 63f5db63ba80bcc4a99f9ee3a5964910, type: 3}
+  - {fileID: 7214106429408896450, guid: 63f5db63ba80bcc4a99f9ee3a5964910, type: 3}
+  - {fileID: 5451942616671449570, guid: 7109a1a6648f0b74f836557b930e90ce, type: 3}
   <Model>k__BackingField: {fileID: 6881743608925898195, guid: 2009ae21d9fab8943bc0208e3505456c, type: 3}
   <Prefab>k__BackingField: {fileID: 488897231136874627, guid: f3f55b0120c5f4742a3b47f72bcdf7be, type: 3}

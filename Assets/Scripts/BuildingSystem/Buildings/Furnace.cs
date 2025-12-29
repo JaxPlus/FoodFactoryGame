@@ -24,6 +24,16 @@ public class Furnace : BuildingB
 
     void Bake()
     {
+        if (output == null) return;
+        var outputResult = output.AddToInventory(inputInventory[0]);
+        if (inputInventory[0].GetComponent<Item>().ID == itemDictionary.GetItemID("Cake Matcha"))
+        {
+            if (outputResult)
+            {
+                inputInventory[0] = null;
+            }
+        }
+        
         bool isFull = true;
         foreach (var item in inputInventory)
         {
@@ -34,7 +44,6 @@ public class Furnace : BuildingB
         }
         
         if (!isFull) return;
-        if (output == null) return;
         
         foreach (var itemObj in inputInventory)
         {
@@ -68,7 +77,7 @@ public class Furnace : BuildingB
 
         inputInventory[0] = itemDictionary.GetItemPrefab(itemDictionary.GetItemID("Cake Matcha"));
         
-        var outputResult = output.AddToInventory(inputInventory[0]);
+        outputResult = output.AddToInventory(inputInventory[0]);
 
         if (outputResult)
         {

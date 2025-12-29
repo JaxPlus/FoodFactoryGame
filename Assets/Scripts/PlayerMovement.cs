@@ -7,8 +7,6 @@ public class Player : MonoBehaviour
     [SerializeField] private float speed = 0.5f;
     private Rigidbody2D rb;
     private Vector2 moveInput;
-    
-    public float rotationSpeed = 10f;
     float rotationVelocity;
     
     void Start()
@@ -16,7 +14,7 @@ public class Player : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
     }
 
-    void Update()
+    private void FixedUpdate()
     {
         rb.linearVelocity = moveInput * speed;
         

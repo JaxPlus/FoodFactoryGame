@@ -14,5 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::BuildingData
   <Name>k__BackingField: Tile
   <Description>k__BackingField: Tile floor.
-  <Cost>k__BackingField: []
+  <Cost>k__BackingField:
+  - {fileID: 7214106429408896450, guid: 63f5db63ba80bcc4a99f9ee3a5964910, type: 3}
   <Model>k__BackingField: {fileID: 307182784275072042, guid: 82b3ed4590ef7124ebe47c733482a617, type: 3}
+  <Prefab>k__BackingField: {fileID: 0}

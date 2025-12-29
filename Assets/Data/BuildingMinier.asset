@@ -14,6 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::BuildingData
   <Name>k__BackingField: Miner
   <Description>k__BackingField: Mines ore.
-  <Cost>k__BackingField: []
+  <Cost>k__BackingField:
+  - {fileID: 7214106429408896450, guid: 63f5db63ba80bcc4a99f9ee3a5964910, type: 3}
+  - {fileID: 7214106429408896450, guid: 63f5db63ba80bcc4a99f9ee3a5964910, type: 3}
   <Model>k__BackingField: {fileID: 4701455286774214722, guid: cc2f9cef647c6f7448db28e45e36e7b9, type: 3}
   <Prefab>k__BackingField: {fileID: 2037468195820874999, guid: b070a4e2620542c4b8105ca02c0d5cc1, type: 3}

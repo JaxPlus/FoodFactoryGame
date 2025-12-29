@@ -14,6 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::BuildingData
   <Name>k__BackingField: Cleaner
   <Description>k__BackingField: Washes ore clumps to make ores.
-  <Cost>k__BackingField: []
+  <Cost>k__BackingField:
+  - {fileID: 7214106429408896450, guid: 63f5db63ba80bcc4a99f9ee3a5964910, type: 3}
+  - {fileID: 7214106429408896450, guid: 63f5db63ba80bcc4a99f9ee3a5964910, type: 3}
+  - {fileID: 131330856908466754, guid: 11efb696abfb5374eb15b18569b7ada9, type: 3}
   <Model>k__BackingField: {fileID: 7691635486258164499, guid: 875b2adf94a45d54f8aeb1b4b8438e11, type: 3}
   <Prefab>k__BackingField: {fileID: 1373803083396126285, guid: 2ebaeee6245c3d6448c8f6cc173ffa54, type: 3}

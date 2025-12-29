@@ -14,6 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::BuildingData
   <Name>k__BackingField: Pulverizer
   <Description>k__BackingField: Processes raw ore into clumps.
-  <Cost>k__BackingField: []
+  <Cost>k__BackingField:
+  - {fileID: 7214106429408896450, guid: 63f5db63ba80bcc4a99f9ee3a5964910, type: 3}
+  - {fileID: 7214106429408896450, guid: 63f5db63ba80bcc4a99f9ee3a5964910, type: 3}
   <Model>k__BackingField: {fileID: 560846151669008071, guid: 5932ba54f3641694a8c5b34fe24db27a, type: 3}
   <Prefab>k__BackingField: {fileID: 6291055686146781669, guid: 3cd171238a6a441469af05de835412ee, type: 3}

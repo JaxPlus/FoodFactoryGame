@@ -14,6 +14,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::BuildingData
   <Name>k__BackingField: Furnace
   <Description>k__BackingField: Furnace for baking cakes and other stuff.
-  <Cost>k__BackingField: []
+  <Cost>k__BackingField:
+  - {fileID: 7214106429408896450, guid: 63f5db63ba80bcc4a99f9ee3a5964910, type: 3}
+  - {fileID: 7214106429408896450, guid: 63f5db63ba80bcc4a99f9ee3a5964910, type: 3}
+  - {fileID: 3771950199994588499, guid: f7ba22de2d53e2045a45529d104f2fc5, type: 3}
+  - {fileID: 3361886975198391753, guid: 1223261f2215a9f46b31adb667b334fa, type: 3}
+  - {fileID: 5451942616671449570, guid: 7109a1a6648f0b74f836557b930e90ce, type: 3}
   <Model>k__BackingField: {fileID: 6030975975432284345, guid: c6bda2bf4bf585e43867559c55b4e1cc, type: 3}
   <Prefab>k__BackingField: {fileID: 559715518011073067, guid: 206668584874e8f4899ac44496d98eea, type: 3}
