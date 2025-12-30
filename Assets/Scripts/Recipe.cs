@@ -15,6 +15,7 @@ public class Recipe : MonoBehaviour, IPointerClickHandler
     private TMP_Text quantityText;
     
     //RecipeController recipeController;
+    // @TODO naprawić to bo nie działa
     
     void Start()
     {
@@ -55,6 +56,7 @@ public class Recipe : MonoBehaviour, IPointerClickHandler
             
         if (ingredientsCount == 0)
         {
+            result.GetComponent<Item>().quantity = resultQuantity;
             inventoryController.AddItem(result);
             Debug.Log("Recipe finished.");
             SetItemDictionary();

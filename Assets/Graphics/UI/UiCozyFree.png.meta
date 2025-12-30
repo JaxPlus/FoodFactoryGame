@@ -2772,6 +2772,50 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: UiCozyFree_107
+      rect:
+        serializedVersion: 2
+        x: 257
+        y: 161
+        width: 14
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 702170db6241fbe419f97cca04908815
+      internalID: -1600141208
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UiCozyFree_108
+      rect:
+        serializedVersion: 2
+        x: 258
+        y: 130
+        width: 28
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a354187f613547349b9858aca383d9c9
+      internalID: 1278025971
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     customData: 
     physicsShape: []
@@ -2796,6 +2840,8 @@ TextureImporter:
       UiCozyFree_104: 61188182
       UiCozyFree_105: -997199547
       UiCozyFree_106: 1695531709
+      UiCozyFree_107: -1600141208
+      UiCozyFree_108: 1278025971
       UiCozyFree_11: -4667760483156893779
       UiCozyFree_12: 3104513720534059469
       UiCozyFree_13: 1455739551491218734

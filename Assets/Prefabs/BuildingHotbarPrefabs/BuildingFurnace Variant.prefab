@@ -105,6 +105,10 @@ PrefabInstance:
       value: BuildingFurnace Variant
       objectReference: {fileID: 0}
     - target: {fileID: 6572464955082766123, guid: eb57597fe4e4ea845bf5e1b7de7edbaa, type: 3}
+      propertyPath: ID
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6572464955082766123, guid: eb57597fe4e4ea845bf5e1b7de7edbaa, type: 3}
       propertyPath: Name
       value: Furnace
       objectReference: {fileID: 0}

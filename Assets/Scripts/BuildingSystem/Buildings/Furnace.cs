@@ -24,10 +24,11 @@ public class Furnace : BuildingB
 
     void Bake()
     {
+        bool outputResult;
         if (output == null) return;
-        var outputResult = output.AddToInventory(inputInventory[0]);
         if (inputInventory[0].GetComponent<Item>().ID == itemDictionary.GetItemID("Cake Matcha"))
         {
+            outputResult = output.AddToInventory(inputInventory[0]);
             if (outputResult)
             {
                 inputInventory[0] = null;
